@@ -1,39 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Document</title>
-    
-</head>
-<body>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="/assets/css/style.css" />
+    <link rel="stylesheet" href="/assets/css/reset.css" />
+  </head>
+  <body>
     <!--I usually like to make a container div for each section of my page
     lets make this like the greeting section or something-->
+    <!-- nav bar with search (ana) -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="#">Navbar</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#"
+              >Home <span class="sr-only">(current)</span></a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle"
+              href="#"
+              id="navbarDropdown"
+              role="button"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              Dropdown
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="#">Action</a>
+              <a class="dropdown-item" href="#">Another action</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Something else here</a>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link disabled"
+              href="#"
+              tabindex="-1"
+              aria-disabled="true"
+              >Disabled</a
+            >
+          </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+          <input
+            class="form-control mr-sm-2"
+            type="search"
+            placeholder="Search"
+            aria-label="Search"
+          />
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+            Search
+          </button>
+        </form>
+      </div>
+    </nav>
 
     <!--start the page with its title in maybe a jumbotron-->
-    
-    
+
     <!--below that lets make search button with either a menu that is initially hidden
      This menu will contain the sites we want to run our query through and a checkbox. an extra box that check "all" would be cool-->
-    
-    
+
     <!--There should be some sort of visual division from this top section like a line-->
-    
+
     <!--this next section is the actual comparison section and should have a div-->
-    
+
     <!--initially we should have a greeting message here describing how the site works and how we want users to use it-->
-   
+
     <!--the cards will be dynamically created and placed here so i dont think we need to do anything more with this section in the html-->
     <!--another visual divider-->
-    
+
     <!--This section containes our bootstrap carosel. it should display lets say three different examples of 
     cool queries we can make. so im thinking we do one slide for each of our interests
     for instance I would like my slide to show three examples of the query "election" from Fox CNN and NYT
     The style of these examples shoudl match what the users search results look like-->
-    
+
     <!--at the bottom of the page I think a ticker would be cool I would like to display the top 5 trending tweets
     maybe some stock info? idk whatever we feel like. it might not even be necessary-->
     <!--the final thing we want to do is hide an easter egg in this file somewhere for our snake game-->
-</body>
+    <script src="/assets/JS/app.js"></script>
+  </body>
 </html>
