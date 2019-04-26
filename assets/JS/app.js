@@ -1,4 +1,55 @@
 //documentready the thing
+//below are our global variables
+//storing the sources we want to search for
+var selectedSites= []//empty array to contain the sites I want searched this array wil lget aded when user checks a box
+var search = ""; //user search will be a "this.val" object i can call once the html is set up for the search bar
+
+
+/*below is a for loop that will take all the websites our user wants to check 
+and pass them through the API request
+*/
+
+$("whateverthesubmitbuttonis").on("click", function(){
+//update the above class
+
+
+    search= $("whatever the serach box id is").val;//set the search variable to the text of the search box
+    //update the above class
+
+    
+    
+    searchSites(selectedSites);//if working correctly search sites will run with a source parameter of i aka which site the user wants to check
+
+})
+var searchSites= function(source){
+    //were gonna need two query urls i think that will be called in two different ajax requests
+    //the type of news we're looking for
+    //takes the array and joins it and seperates by a comma makes an API request from all the sources
+    source=source.join(',')
+    //source like what kind of 
+    var newsQueryURL = 'https://newsapi.org/v2/everything?q='
+                        + search +'&source='
+                        + source 
+                        + '&apiKey=2328e350ebab4672a9dfa7ce0fdddacd';
+// this will query the news API for our users searchinput and whatever source they selected
+        console.log(newsQueryURL); //debug to make sure the url is coming out ok
+    $.ajax({
+        url: newsQueryURL,
+        method: "GET"
+    })
+        .then(function(response){
+            console.log(response)
+            var newCard=//create the element with the classes to make it like our card example
+            var newImage=//create an img link to the responses image 
+            var newLink=//create a link to the response article
+            newCard.append(newImage).append(newLink)
+            
+        })
+
+    var twitterQueryURL
+    $.ajax({})
+    
+}
 /*fucntions section
 
 for dynamically created results
