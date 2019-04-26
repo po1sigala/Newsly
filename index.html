@@ -5,19 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Newsly</title>
+    <!-- Bootstrap CDN -->
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
       integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
       crossorigin="anonymous"
     />
+    <!-- link to css style sheet -->
     <link rel="stylesheet" href="/assets/css/style.css" />
+    <!-- link to css reset sheet -->
     <link rel="stylesheet" href="/assets/css/reset.css" />
   </head>
   <body>
     <!--I usually like to make a container div for each section of my page
     lets make this like the greeting section or something-->
     <!-- nav bar with search (ana) -->
+    <nav class="navbar navbar-inverse">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#MyNavbar">
+            <!-- hand burger menu -->
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#"><img src=""></a>
+        </div>
+
+    </nav>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <a class="navbar-brand" href="#">Navbar</a>
       <button
@@ -83,9 +99,9 @@
           </button>
         </form>
       </div>
-    </nav>
+    </nav> -->
     <!-- carosel -->
-    <div class="bd-example">
+    <!-- <div class="bd-example">
       <div
         id="carouselExampleCaptions"
         class="carousel slide"
@@ -144,7 +160,7 @@
           <span class="sr-only">Next</span>
         </a>
       </div>
-    </div>
+    </div> -->
     <!-- jumbotron(ana)
     <div class="jumbotron">
       <h1 class="display-4">Hello, world!</h1>
@@ -162,7 +178,7 @@
     <div class="col-sm-8"></div> -->
 
     <!-- footer (ana) -->
-    <div class="card text-center">
+    <!-- <div class="card text-center">
       <div class="card-header">
         Featured
       </div>
@@ -199,7 +215,9 @@
     <!--at the bottom of the page I think a ticker would be cool I would like to display the top 5 trending tweets
     maybe some stock info? idk whatever we feel like. it might not even be necessary-->
     <!--the final thing we want to do is hide an easter egg in this file somewhere for our snake game-->
+    <!-- jquery link -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- javascript link -->
     <script src="/assets/JS/app.js"></script>
   </body>
 </html>
