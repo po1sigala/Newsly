@@ -1,8 +1,67 @@
 //documentready the thing
-/* general thoughts below about building the logic
+//below are our global variables
+//storing the sources we want to search for
+var selectedSites= ["bleacher-report","bbc-news","reddit-r-all","fox-news", "cnn"]//empty array to contain the sites I want searched this array wil lget aded when user checks a box
+var search = ""; //user search will be a "this.val" object i can call once the html is set up for the search bar
 
-fucntions section
+//below is a cuntion which will add the sites we want searched based on if their boxes are checked in the html
+$("clickboxid").on("click",function(){
+    if(selectedSites.includes(this.attr("id"))){//this should say if our array contains an element that matches the clicked boxes id do something
+        selectedSites.splice(selectedSites.indexof(this.attr("id")),0)//removes it from the array
+    }else{
+        selectedSites.push(this.attr("id"))//if its notin the array add it
+    }
+})
+//-----------------------update the above class------------------------------------------------
 
+$(document).on("click", function(){
+//----------------------update the above class------------------------------------------------
+console.log("clicked")
+    search= "sports";//set the search variable to the text of the search box
+    //u-----------------------------pdate the above class---------------------------------
+    for(i=0;i<selectedSites.length;i++){
+        searchSites[i]
+
+    }
+    searchSites(selectedSites);//if working correctly search sites will run with a source parameter of i aka which site the user wants to check
+
+})
+var searchSites= function(source){
+    //were gonna need two query urls i think that will be called in two different ajax requests
+    //the type of news we're looking for
+    //takes the array and joins it and seperates by a comma makes an API request from all the sources
+    // source=source.join(',')
+    
+    console.log(search);
+    console.log(source);
+    //source like what kind of 
+    var newsQueryURL = 
+    // "https://newsapi.org/v2/sources?apiKey=2328e350ebab4672a9dfa7ce0fdddacd"; requests all sources
+                        'https://newsapi.org/v2/everything?q='
+                        + search +'&sources='
+                        + source 
+                        +"&pageSize=1"
+                        + '&apiKey=2328e350ebab4672a9dfa7ce0fdddacd';
+// this will query the news API for our users searchinput and whatever source they selected
+        console.log(newsQueryURL); //debug to make sure the url is coming out ok
+    $.ajax({
+        url: newsQueryURL,
+        method: "GET"
+    })
+        .then(function(response){
+            console.log(response)
+            // var newCard="";//create the element with the classes to make it like our card example
+            // var newImage="";//create an img link to the responses image 
+            // var newLink="";//create a link to the response article
+            // newCard.append(newImage).append(newLink)
+            
+        })
+
+    var twitterQueryURL
+    $.ajax({})
+    
+}
+/*fucntions section
 for dynamically created results
     dynamically create whatever the card class with the header and footer
     give it an img attr 
@@ -26,57 +85,3 @@ API
     twitter share API fro creating tweets about what the user found
     NewsAPI to query sites
 */ 
-
-
-
-
-//API code below
-//2328e350ebab4672a9dfa7ce0fdddacd news api
-//2328e350ebab4672a9dfa7ce0fdddacd twitter api
-
-
-//below are our global variables
-var selectedSites= []//empty array to contain the sites I want searched this array wil lget aded when user checks a box
-var search = ""; //user search will be a "this.val" object i can call once the html is set up for the search bar
-
-
-/*below is a for loop that will take all the websites our user wants to check 
-and pass them through the API request
-*/
-
-$("whateverthesubmitbuttonis").on("click", function(){
-//update the above class
-
-
-    search= $("whatever the serach box id is").val;//set the search variable to the text of the search box
-    //update the above class
-
-    for (i=0; i<selectedSites.length;i++){
-        searchSites([i]);//if working correctly search sites will run with a source parameter of i aka which site the user wants to check
-    }
-})
-var searchSites= function(source){
-    //were gonna need two query urls i think that will be called in two different ajax requests
-    var newsQueryURL = 'https://newsapi.org/v2/everything?q='
-                        + search +'&sources='
-                        + source 
-                        + '&apiKey=2328e350ebab4672a9dfa7ce0fdddacd';
-// this will query the news API for our users searchinput and whatever source they selected
-        console.log(newsQueryURL); //debug to make sure the url is coming out ok
-    $.ajax({
-        url: newsQueryURL,
-        method: "GET"
-    })
-        .then(function(response){
-            console.log(response)
-            var newCard=//create the element with the classes to make it like our card example
-            var newImage=//create an img link to the responses image 
-            var newLink=//create a link to the response article
-            newCard.append(newImage).append(newLink)
-            
-        })
-
-    var twitterQueryURL
-    $.ajax({})
-    
-}
