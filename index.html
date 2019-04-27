@@ -23,122 +23,83 @@
     <link rel="stylesheet" href="./assets/css/reset.css" />
   </head>
   <body>
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-toggle="collapse"
-        data-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="#"
-              >Home <span class="sr-only">(current)</span></a
-            >
-          </li>
-
-          <li class="nav-item dropdown">
-            <a
-              class="nav-link dropdown-toggle"
-              href="#"
-              id="navbarDropdown"
-              role="button"
-              data-toggle="dropdown"
-              aria-haspopup="true"
-              aria-expanded="false"
-            >
-              News Sources
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="https://www.msnbc.com">MSNBC</a>
-              <a class="dropdown-item" href="https://www.cnn.com">CNN</a>
-              <a class="dropdown-item" href="https://www.youtube.com"
-                >YouTube</a
-              >
-            </div>
-          </li>
-        </ul>
-        <form class="form-inline my-2 my-lg-0">
-          <input
-            class="form-control mr-sm-2"
-            type="search"
-            placeholder="Search"
-            aria-label="Search"
-          />
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
-            Search
-          </button>
-        </form>
-      </div>
-    </nav>
-    <!-- Jumbotron -->
-    <div class="jumbotron">
-      <h1 class="display-4 text-center">NEWSLY</h1>
-      <p class="lead text-center">
-        This will allow you to search through various search news platforms all
-        in one place.
-      </p>
-      <hr class="my-4" />
-    </div>
-    <div class="col-sm-8"></div>
-
-    <!-- Carousel -->
-    <div class="bs-example">
-      <div
-        id="myCarousel"
-        class="carousel slide"
-        data-interval="3000"
-        data-ride="carousel"
-      >
-        <!-- Carousel indicators -->
-        <ol class="carousel-indicators">
-          <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-          <li data-target="#myCarousel" data-slide-to="1"></li>
-          <li data-target="#myCarousel" data-slide-to="2"></li>
-        </ol>
-        <!-- Wrapper for carousel items -->
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img src="/examples/images/slide1.png" alt="First Slide" />
-            <div class="carousel-caption d-none d-md-block">
-              <h5>First slide label</h5>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <img src="/examples/images/slide2.png" alt="Second Slide" />
-            <div class="carousel-caption d-none d-md-block">
-              <h5>Second slide label</h5>
-              <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <img src="/examples/images/slide3.png" alt="Third Slide" />
-            <div class="carousel-caption d-none d-md-block">
-              <h5>Third slide label</h5>
-              <p>
-                Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-              </p>
-            </div>
-          </div>
+        <!-- Jumbotron -->
+        <div class="jumbotron">
+          <h1 class="display-4 text-center">NEWSLY</h1>
+          <p class="lead text-center">
+            This will allow you to search for news in multiple platforms and compare discussions
+          </p>
+          <hr class="my-4" />
         </div>
-        <!-- Carousel controls -->
-        <a class="carousel-control-prev" href="#myCarousel" data-slide="prev">
-          <span class="carousel-control-prev-icon"></span>
-        </a>
-        <a class="carousel-control-next" href="#myCarousel" data-slide="next">
-          <span class="carousel-control-next-icon"></span>
-        </a>
-      </div> 
-    </div>
+        <div class="col-sm-8"></div>
+
+           <!-- Navbar -->
+              <form class="form-inline my-2 my-lg-0"> 
+                <div class="input-group">
+                  <input type="text" class="form-control" aria-label="Text input with segmented dropdown button">
+                  <div class="input-group-append">
+                    <button type="button" class="btn btn-outline-secondary" id="searchButton">Search</button>
+                    <button type="button" class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      <span class="sr-only">Toggle Dropdown</span>
+                    </button>
+                    <div class="dropdown-menu">
+                      <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                          <div class="input-group-text">
+                            <input type="checkbox" aria-label="Checkbox for following text input">
+                          </div>
+                        </div>
+                        <form> <label id="cnn">CNN</label><br> </form>
+                      </div>  
+                      <div class="input-group mb-3 id=">
+                        <div class="input-group-prepend">
+                          <div class="input-group-text">
+                            <input type="checkbox" aria-label="Checkbox for following text input">
+                          </div>
+                        </div>
+                        <form> <label id="fox-news">FOX NEWS</label><br> </form>
+                      </div>      
+                       
+                      <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                          <div class="input-group-text">
+                            <input type="checkbox" aria-label="Checkbox for following text input">
+                          </div>
+                        </div>
+                        <form> <label id="bbc-news">BBC NEWS</label><br> </form>
+                      </div>
+                      <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                          <div class="input-group-text">
+                            <input type="checkbox" aria-label="Checkbox for following text input">
+                          </div>
+                        </div>
+                        <form> <label id="reddit-r-all">Reddit</label><br> </form>
+                      </div>
+                      <div class="input-group mb-3 id=">
+                        <div class="input-group-prepend">
+                          <div class="input-group-text">
+                            <input type="checkbox" aria-label="Checkbox for following text input">
+                          </div>
+                        </div>
+                        <form> <label id="bleacher-report">BLEACHER REPORT</label><br> </form>
+                      </div>   
+                      <div class="input-group mb-3 id=">
+                        <div class="input-group-prepend">
+                          <div class="input-group-text">
+                            <input type="checkbox" aria-label="Checkbox for following text input">
+                          </div>
+                        </div>
+                        <form> <label id="all">ALL</label><br> </form>
+                      </div>   
+                    
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </nav>
+
     <!-- cards -->
   <section>
     <div class="container-fluid">
@@ -147,7 +108,43 @@
           <div class="col-sm-4">
             <div class="card">
               <div class="post-image">
-                <img src="./assets/images/Screen Shot 2019-04-25 at 7.51.18 PM.png" class="img-responsive">
+                <img src="./assets/images/images4.jpg" class="img-responsive">
+            </div>
+            <div class="news-content">
+              <span class="category">News</span>
+              <div class="post-meta">
+                <span class="author">
+                  <a href="#">
+                    <i class="fa fa-user" aria-hidden="true"></i>
+                    someone famous
+                  </a>
+                </span>
+                <span class="author">
+                  <a href="#">
+                     <i class="fa fa-clock-o" aria-hidden="true"></i>
+                      May 5, 2019
+                  </a>
+                </span>
+                <span class="comments">
+                    <a href="#">
+                      <i class="fa fa-commenting" aria-hidden="true"></i>
+                        83
+                    </a>
+                </span>
+                <div class="clearfix"></div>
+              </div>
+              <h2 class="post-header">
+                Let's go Warriors!
+              </h2>
+              <p>nkvnrefjvsjdvnadfkzjnadzvjbfknaejdznfb</p>
+            </div>
+          </div>
+
+        </div>
+        <div class="col-sm-4">
+            <div class="card">
+              <div class="post-image">
+                <img src="./assets/images/image1.png" class="img-responsive">
             </div>
             <div class="news-content">
               <span class="category">Sports</span>
@@ -183,46 +180,10 @@
         <div class="col-sm-4">
             <div class="card">
               <div class="post-image">
-                <img src="./assets/images/Screen Shot 2019-04-25 at 7.51.18 PM.png" class="img-responsive">
+                <img src="./assets/images/image2.jpg" class="img-responsive">
             </div>
             <div class="news-content">
-              <span class="category">Sports</span>
-              <div class="post-meta">
-                <span class="author">
-                  <a href="#">
-                    <i class="fa fa-user" aria-hidden="true"></i>
-                    someone famous
-                  </a>
-                </span>
-                <span class="author">
-                  <a href="#">
-                     <i class="fa fa-clock-o" aria-hidden="true"></i>
-                      May 5, 2019
-                  </a>
-                </span>
-                <span class="comments">
-                    <a href="#">
-                      <i class="fa fa-commenting" aria-hidden="true"></i>
-                        83
-                    </a>
-                </span>
-                <div class="clearfix"></div>
-              </div>
-              <h2 class="post-header">
-                Let's go Warriors!
-              </h2>
-              <p>nkvnrefjvsjdvnadfkzjnadzvjbfknaejdznfb</p>
-            </div>
-          </div>
-
-        </div>
-        <div class="col-sm-4">
-            <div class="card">
-              <div class="post-image">
-                <img src="./assets/images/Screen Shot 2019-04-25 at 7.51.18 PM.png" class="img-responsive">
-            </div>
-            <div class="news-content">
-              <span class="category">Sports</span>
+              <span class="category">Discussions</span>
               <div class="post-meta">
                 <span class="author">
                   <a href="#">
@@ -283,8 +244,11 @@
     <!--the final thing we want to do is hide an easter egg in this file somewhere for our snake game-->
 
     <!-- jquery link -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
     <!-- javascript link -->
-    <script src="./assets/JS/app.js"></script>
+    <!-- <script src="./assets/JS/app.js"></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
   </body>
 </html>

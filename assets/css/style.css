@@ -1,22 +1,12 @@
 /* I think the only must have would be a media query for small screens
  small screens should maybe only display one card in the results section instead of two or thre
  what color should our links be and should they turn colors on \hover or after clicks*/
-.carousel {
-  background: #2f4357;
-  margin-top: 20px;
-}
-.carousel-item {
-  text-align: center;
-  min-height: 280px; /* Prevent carousel from being distorted if for some reason image doesn't load */
-}
-.bs-example {
-  margin: 20px;
-}
 @import url("https://fonts.googleapis.com/css?family=Roboto+Condensed");
 body {
   margin: 0;
   padding: 0;
   font-family: "Roboto Condensed", sans-serif !important;
+  background: #262626 !important;
 }
 section {
   padding: 180px 0 0;
@@ -40,8 +30,12 @@ section {
 .card .news-content {
   position: absolute;
   padding: 20px;
+  bottom: -150px;
   background: #fff;
   transition: 5s;
+}
+.card:hover .news-content {
+ bottom: 0px;
 }
 .card .category {
   position: absolute;
@@ -80,12 +74,22 @@ section {
     font-size: 16px;
     margin: 10px 0 0;
     padding: 0;
-    color: ;
+    color: black;
     transition: .5s;
     opacity: 0'
 }
 .card:hover .news-content p {
     opacity: 1;
+}
+h1 {
+  font-family: 'Abril Fatface';
+  font-weight: 100;
+}
+.lead text-center {
+  font-family: 'Abril Fatface';
+}
+.form-inline {
+  align-content: center
 }
 
 
