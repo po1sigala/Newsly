@@ -38,7 +38,7 @@ var searchSites= function(source){
         method: "GET"
     })
         .then(function(response){
-            console.log(response)
+            console.log(response);
             var newCard=//create the element with the classes to make it like our card example
             var newImage=//create an img link to the responses image 
             var newLink=//create a link to the response article

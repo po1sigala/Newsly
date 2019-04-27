@@ -1,3 +1,91 @@
 /* I think the only must have would be a media query for small screens
  small screens should maybe only display one card in the results section instead of two or thre
- whagt color should our links be and should they turn colors on \hover or after clicks*/
+ what color should our links be and should they turn colors on \hover or after clicks*/
+.carousel {
+  background: #2f4357;
+  margin-top: 20px;
+}
+.carousel-item {
+  text-align: center;
+  min-height: 280px; /* Prevent carousel from being distorted if for some reason image doesn't load */
+}
+.bs-example {
+  margin: 20px;
+}
+@import url("https://fonts.googleapis.com/css?family=Roboto+Condensed");
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto Condensed", sans-serif !important;
+}
+section {
+  padding: 180px 0 0;
+}
+.card {
+  position: relative;
+  height: 400px;
+  /* overflow: hidden; */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+.card .post-image {
+  height: 300px;
+  overflow: hidden;
+}
+.card .post-image img {
+  transition: 5s;
+}
+.card:hover .post-image img {
+  transform: scale(1.2) translate(-50px);
+}
+.card .news-content {
+  position: absolute;
+  padding: 20px;
+  background: #fff;
+  transition: 5s;
+}
+.card .category {
+  position: absolute;
+  top: -30px;
+  left: 0;
+  height: 30px;
+  background: #00b8f4;
+  text-align: center;
+  color: #fff;
+  text-transform: uppercase;
+  padding: 5px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  transition: 0.5s;
+}
+.card .news-content.post-meta a {
+  text-decoration: none;
+  padding-right: 10px;
+  color: ;
+  font-weight: bold;
+  transition: 0.5s;
+}
+.card .news-content.post-meta a:hover {
+  color: #df084a;
+}
+.card .news-content.post-header {
+  margin: 0;
+  padding: 10px 0;
+  color: #007da6;
+  height: 75px;
+  background: #ccc;
+  font-size: 28px;
+  overflow: hidden;
+}
+.card .news-content p {
+    font-size: 16px;
+    margin: 10px 0 0;
+    padding: 0;
+    color: ;
+    transition: .5s;
+    opacity: 0'
+}
+.card:hover .news-content p {
+    opacity: 1;
+}
+
+
