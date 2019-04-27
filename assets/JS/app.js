@@ -1,32 +1,35 @@
 //documentready the thing
 //below are our global variables
 //storing the sources we want to search for
-var selectedSites= ["bleacher-report","bbc-news","reddit-r-all","fox-news", "cnn"]//empty array to contain the sites I want searched this array wil lget aded when user checks a box
 var search = ""; //user search will be a "this.val" object i can call once the html is set up for the search bar
 
-//below is a cuntion which will add the sites we want searched based on if their boxes are checked in the html
-$("clickboxid").on("click",function(){
-    if(selectedSites.includes(this.attr("id"))){//this should say if our array contains an element that matches the clicked boxes id do something
-        selectedSites.splice(selectedSites.indexof(this.attr("id")),0)//removes it from the array
-    }else{
-        selectedSites.push(this.attr("id"))//if its notin the array add it
-    }
-})
+
 //-----------------------update the above class------------------------------------------------
 
-$(document).on("click", function(){
+$("#searchButton").on("click",function(){
 //----------------------update the above class------------------------------------------------
 console.log("clicked")
-    search= "sports";//set the search variable to the text of the search box
-    //u-----------------------------pdate the above class---------------------------------
-    for(i=0;i<selectedSites.length;i++){
-        searchSites[i]
+    search= $(this).val;//set the search variable to the text of the search box
+
+    // get all checked boxes
+   var checkedBoxes=$(".sources:checked").map(function(){
+       return this.id;
+   })
+   .get();
+    // get all ids from checked boxes
+   
+    // user all ids as array to for loop
+    // look at jQuery map method
+
+    for(i=0;i<checkedBoxes.length;i++){
+        var site = checkedBoxes[i];//we are setting var site to the element at index i
+        searchSites(site)//we are running the searchsites function with the result of selectedsites{i}
 
     }
-    searchSites(selectedSites);//if working correctly search sites will run with a source parameter of i aka which site the user wants to check
+    // searchSites(selectedSites);//if working correctly search sites will run with a source parameter of i aka which site the user wants to check
 
 })
-var searchSites= function(source){
+var searchSites= function(search, source){
     //were gonna need two query urls i think that will be called in two different ajax requests
     //the type of news we're looking for
     //takes the array and joins it and seperates by a comma makes an API request from all the sources
@@ -36,7 +39,7 @@ var searchSites= function(source){
     console.log(source);
     //source like what kind of 
     var newsQueryURL = 
-    // "https://newsapi.org/v2/sources?apiKey=2328e350ebab4672a9dfa7ce0fdddacd"; requests all sources
+    // " 
                         'https://newsapi.org/v2/everything?q='
                         + search +'&sources='
                         + source 
@@ -85,3 +88,20 @@ API
     twitter share API fro creating tweets about what the user found
     NewsAPI to query sites
 */ 
+
+
+
+
+/* var selectedSites= ["bleacher-report","bbc-news","reddit-r-all","fox-news", "cnn"]//empty array to contain the sites I want searched this array wil lget aded when user checks a box
+this was an array i made that is no longer necessary bc i wil be creating the array within  the search function using .map*/
+
+/*below is a function I was using to check for checked boxes but is no longer necessary because It was extra work
+buy just using .map I can create an array every time a function runs
+
+$("clickboxid").on("click",function(){
+    if(selectedSites.includes(this.attr("id"))){//this should say if our array contains an element that matches the clicked boxes id do something
+        selectedSites.splice(selectedSites.indexof(this.attr("id")),0)//removes it from the array
+    }else{
+        selectedSites.push(this.attr("id"))//if its notin the array add it
+    }
+})*/
