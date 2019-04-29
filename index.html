@@ -31,75 +31,101 @@
           </p>
           <hr class="my-4" />
         </div>
-        <div class="col-sm-8"></div>
-
-           <!-- Navbar -->
-              <form class="form-inline my-2 my-lg-0"> 
-                <div class="input-group">
-                  <input type="text" class="form-control" aria-label="Text input with segmented dropdown button">
-                  <div class="input-group-append">
-                    <button type="button" class="btn btn-outline-secondary" id="searchButton">Search</button>
-                    <button type="button" class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      <span class="sr-only">Toggle Dropdown</span>
-                    </button>
-                    <div class="dropdown-menu">
-                      <div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                          <div class="input-group-text">
-                            <input type="checkbox" aria-label="Checkbox for following text input">
-                          </div>
-                        </div>
-                        <form> <label id="cnn">CNN</label><br> </form>
-                      </div>  
-                      <div class="input-group mb-3 id=">
-                        <div class="input-group-prepend">
-                          <div class="input-group-text">
-                            <input type="checkbox" aria-label="Checkbox for following text input">
-                          </div>
-                        </div>
-                        <form> <label id="fox-news">FOX NEWS</label><br> </form>
-                      </div>      
-                       
-                      <div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                          <div class="input-group-text">
-                            <input type="checkbox" aria-label="Checkbox for following text input">
-                          </div>
-                        </div>
-                        <form> <label id="bbc-news">BBC NEWS</label><br> </form>
+        <body> 
+          <div class="container-fluid">
+              <div class="row">
+                  <div class="col-sm-3 col-md-2 sidebar">
+                    <h2>SEARCH</h2> 
+                      <ul class="nav nav-sidebar">
+                          <!-- Navbar -->
+          <form class="form-inline my-2 my-lg-0"> 
+            <div class="input-group">
+              <input type="text" class="form-control" aria-label="Text input with segmented dropdown button">
+              <div class="input-group-append">
+                <button type="button" class="btn btn-outline-secondary" id="searchButton">Submit</button>
+                <button type="button" class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <span class="sr-only">Toggle Dropdown</span>
+                </button>
+                <div class="dropdown-menu">
+                  <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                      <div class="input-group-text">
+                        <input type="checkbox" aria-label="Checkbox for following text input">
                       </div>
-                      <div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                          <div class="input-group-text">
-                            <input type="checkbox" aria-label="Checkbox for following text input">
-                          </div>
-                        </div>
-                        <form> <label id="reddit-r-all">Reddit</label><br> </form>
-                      </div>
-                      <div class="input-group mb-3 id=">
-                        <div class="input-group-prepend">
-                          <div class="input-group-text">
-                            <input type="checkbox" aria-label="Checkbox for following text input">
-                          </div>
-                        </div>
-                        <form> <label id="bleacher-report">BLEACHER REPORT</label><br> </form>
-                      </div>   
-                      <div class="input-group mb-3 id=">
-                        <div class="input-group-prepend">
-                          <div class="input-group-text">
-                            <input type="checkbox" aria-label="Checkbox for following text input">
-                          </div>
-                        </div>
-                        <form> <label id="all">ALL</label><br> </form>
-                      </div>   
-                    
                     </div>
+                    <form> <label id="cnn">CNN</label><br> </form>
+                  </div>  
+                  <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                      <div class="input-group-text">
+                        <input type="checkbox" aria-label="Checkbox for following text input">
+                      </div>
+                    </div>
+                    <form> <label id="fox-news">FOX NEWS</label><br> </form>
+                  </div>      
+                   
+                  <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                      <div class="input-group-text">
+                        <input type="checkbox" aria-label="Checkbox for following text input">
+                      </div>
+                    </div>
+                    <form> <label id="bbc-news">BBC NEWS</label><br> </form>
                   </div>
+                  <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                      <div class="input-group-text">
+                        <input type="checkbox" aria-label="Checkbox for following text input">
+                      </div>
+                    </div>
+                    <form> <label id="reddit-r-all">Reddit</label><br> </form>
+                  </div>
+                  <div class="input-group mb-3 id=">
+                    <div class="input-group-prepend">
+                      <div class="input-group-text">
+                        <input type="checkbox" aria-label="Checkbox for following text input">
+                      </div>
+                    </div>
+                    <form> <label id="bleacher-report">BLEACHER REPORT</label><br> </form>
+                  </div>   
+                  <div class="input-group mb-3 id=">
+                    <div class="input-group-prepend">
+                      <div class="input-group-text">
+                        <input type="checkbox" aria-label="Checkbox for following text input">
+                      </div>
+                    </div>
+                    <form> <label id="all">ALL</label><br> </form>
+                  </div>   
+                
                 </div>
-              </form>
+              </div>
             </div>
-          </nav>
-
+          </form>
+          <div class="row">
+              <h2>TRENDING ON TWITTER</h2>
+              <div class="twitterItems">
+                <p>
+                  <i class="fa fa-twitter">
+                    Post Title
+                  </i>
+                </p>  
+                
+                <p>
+                    <i class="fa fa-twitter">
+                      Post Title
+                    </i>
+                  </p>  
+                  <p>
+                      <i class="fa fa-twitter">
+                        Post Title
+                      </i>
+                    </p>  
+                                    
+              </div>
+            </div> 
+        </div>
+      </nav>
+    </div>
     <!-- cards -->
   <section>
     <div class="container-fluid">
@@ -113,12 +139,12 @@
             <div class="news-content">
               <span class="category">News</span>
               <div class="post-meta">
-                <span class="author">
+                <!-- <span class="author">
                   <a href="#">
                     <i class="fa fa-user" aria-hidden="true"></i>
                     someone famous
                   </a>
-                </span>
+                </span> -->
                 <span class="author">
                   <a href="#">
                      <i class="fa fa-clock-o" aria-hidden="true"></i>
@@ -149,12 +175,12 @@
             <div class="news-content">
               <span class="category">Sports</span>
               <div class="post-meta">
-                <span class="author">
+                <!-- <span class="author">
                   <a href="#">
                     <i class="fa fa-user" aria-hidden="true"></i>
                     someone famous
                   </a>
-                </span>
+                </span> -->
                 <span class="author">
                   <a href="#">
                      <i class="fa fa-clock-o" aria-hidden="true"></i>
@@ -187,12 +213,6 @@
               <div class="post-meta">
                 <span class="author">
                   <a href="#">
-                    <i class="fa fa-user" aria-hidden="true"></i>
-                    someone famous
-                  </a>
-                </span>
-                <span class="author">
-                  <a href="#">
                      <i class="fa fa-clock-o" aria-hidden="true"></i>
                       May 5, 2019
                   </a>
@@ -216,6 +236,7 @@
       </div>
     </div>
   </section>
+  <footer class="footer"> 2019 &copy; Anadelaine Catalla, Renata Oliveira and Alexander Sigala </footer>
 
     <!--I usually like to make a container div for each section of my page
     lets make this like the greeting section or something-->
