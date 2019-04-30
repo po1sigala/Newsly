@@ -24,33 +24,37 @@
   </head>
   <body>
         <!-- Jumbotron -->
-        <div class="jumbotron">
+        <!-- Jumbotron -->
+       <div class="jumbotron">
+          <div class="background-image"></div>
+          <div class="title-container text-center mx-auto">
           <h1 class="display-4 text-center">NEWSLY</h1>
           <p class="lead text-center">
-            This will allow you to search for news in multiple platforms and compare discussions
+            Exapnd Your View Point
           </p>
-          <hr class="my-4" />
+          </div>
         </div>
+        <div class="col-sm-8"></div>
         <body> 
           <div class="container-fluid">
               <div class="row">
                   <div class="col-sm-3 col-md-2 sidebar">
                     <h2>SEARCH</h2> 
                       <ul class="nav nav-sidebar">
-                          <!-- Navbar -->
-          <form class="form-inline my-2 my-lg-0"> 
-            <div class="input-group">
-              <input type="text" class="form-control" aria-label="Text input with segmented dropdown button">
-              <div class="input-group-append">
-                <button type="button" class="btn btn-outline-secondary" id="searchButton">Submit</button>
-                <button type="button" class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  <span class="sr-only">Toggle Dropdown</span>
-                </button>
+                          <!-- Navbar
+                       <form class="form-inline my-2 my-lg-0"> 
+                        <div class="input-group">
+                        <input type="text" class="form-control" aria-label="Text input with segmented dropdown button">
+                        <div class="input-group-append">
+                          <button type="button" class="btn btn-outline-secondary" id="searchButton">Submit</button>
+                          <button type="button" class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          <span class="sr-only">Toggle Dropdown</span>
+                        </button>
                 <div class="dropdown-menu">
                   <div class="input-group mb-3">
                     <div class="input-group-prepend">
                       <div class="input-group-text">
-                        <input type="checkbox" aria-label="Checkbox for following text input">
+                        <input type="checkbox" id="cnn" aria-label="Checkbox for following text input">
                       </div>
                     </div>
                     <form> <label id="cnn">CNN</label><br> </form>
@@ -58,7 +62,7 @@
                   <div class="input-group mb-3">
                     <div class="input-group-prepend">
                       <div class="input-group-text">
-                        <input type="checkbox" aria-label="Checkbox for following text input">
+                        <input type="checkbox" id="fox-news" aria-label="Checkbox for following text input">
                       </div>
                     </div>
                     <form> <label id="fox-news">FOX NEWS</label><br> </form>
@@ -67,7 +71,7 @@
                   <div class="input-group mb-3">
                     <div class="input-group-prepend">
                       <div class="input-group-text">
-                        <input type="checkbox" aria-label="Checkbox for following text input">
+                        <input type="checkbox" id="bbc-news" aria-label="Checkbox for following text input">
                       </div>
                     </div>
                     <form> <label id="bbc-news">BBC NEWS</label><br> </form>
@@ -75,7 +79,7 @@
                   <div class="input-group mb-3">
                     <div class="input-group-prepend">
                       <div class="input-group-text">
-                        <input type="checkbox" aria-label="Checkbox for following text input">
+                        <input type="checkbox" id="reddit-r-all" aria-label="Checkbox for following text input">
                       </div>
                     </div>
                     <form> <label id="reddit-r-all">Reddit</label><br> </form>
@@ -83,7 +87,7 @@
                   <div class="input-group mb-3 id=">
                     <div class="input-group-prepend">
                       <div class="input-group-text">
-                        <input type="checkbox" aria-label="Checkbox for following text input">
+                        <input type="checkbox" id="bleacher-report" aria-label="Checkbox for following text input">
                       </div>
                     </div>
                     <form> <label id="bleacher-report">BLEACHER REPORT</label><br> </form>
@@ -91,7 +95,7 @@
                   <div class="input-group mb-3 id=">
                     <div class="input-group-prepend">
                       <div class="input-group-text">
-                        <input type="checkbox" aria-label="Checkbox for following text input">
+                        <input type="checkbox" id="all" aria-label="Checkbox for following text input">
                       </div>
                     </div>
                     <form> <label id="all">ALL</label><br> </form>
@@ -100,27 +104,38 @@
                 </div>
               </div>
             </div>
-          </form>
+          </form> -->
           <div class="row">
               <h2>TRENDING ON TWITTER</h2>
-              <div class="twitterItems">
-                <p>
-                  <i class="fa fa-twitter">
-                    Post Title
-                  </i>
-                </p>  
-                
-                <p>
-                    <i class="fa fa-twitter">
-                      Post Title
-                    </i>
-                  </p>  
-                  <p>
+              <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
+                  <div class="card-header">TWITTER</div>
+                  <div class="card-body">
+                    <h5 class="card-title">TRENDING</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <div class="twitterItems">
+                        <p>
+                          <i class="fa fa-twitter">
+                            Post Title
+                          </i>
+                        </p> 
+                    </div>
+                    </div>
+                     <div class="twitterItems">
+                    <p>
                       <i class="fa fa-twitter">
                         Post Title
                       </i>
-                    </p>  
-                                    
+                    </p> 
+                </div>
+                <div class="twitterItems">
+                        <p>
+                          <i class="fa fa-twitter">
+                            Post Title
+                          </i>
+                        </p> 
+                  </div>
+                </div>
+                </div>       
               </div>
             </div> 
         </div>
@@ -236,7 +251,7 @@
       </div>
     </div>
   </section>
-  <footer class="footer"> 2019 &copy; Anadelaine Catalla, Renata Oliveira and Alexander Sigala </footer>
+  <footer class="footer text-center"> 2019 &copy; Anadelaine Catalla, Renata Oliveira and Alexander Sigala </footer>
 
     <!--I usually like to make a container div for each section of my page
     lets make this like the greeting section or something-->

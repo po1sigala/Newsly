@@ -1,3 +1,7 @@
+html {
+  position: relative;
+  min-height: 100%;
+ }
 /* I think the only must have would be a media query for small screens
  small screens should maybe only display one card in the results section instead of two or thre
  what color should our links be and should they turn colors on \hover or after clicks*/
@@ -139,7 +143,30 @@ h2 {
   display: block;
   border: gray solid;
 }
-
+.jumbotron {
+  background-image: url("../images/images5.png");
+  box-shadow: 5 10px 15px rgba(0, 0, 0, 0.5);
+ }
+ 
+ .title-container {
+  background-color: white;
+  border: 3px solid darkgray;
+  border-radius: 60px;
+  opacity: .8;
+  width: 60%;
+  box-shadow: 5 10px 15px rgba(248, 248, 248, 0.5);
+ 
+ }
+ footer {
+  background-color: white;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 100px;
+  width: 100%;
+  overflow: hidden;
+  margin: 100rem 0 -2rem 0;
+ }
 @media only screen and (min-width:300px) and (max-width:767px) {
   .media {
     flex-wrap:wrap;
