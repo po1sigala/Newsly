@@ -26,7 +26,15 @@
         <!-- Jumbotron -->
         <div class="jumbotron">
           <h1 class="display-4 text-center">NEWSLY</h1>
-          <p class="lead text-center">
+          <p class="lead text-center" id ="lastSearch">
+
+
+<!--I tied "last search" above just to test it please move this id to wherever you want the last search item to populate-->
+
+
+
+
+
             This will allow you to search for news in multiple platforms and compare discussions
           </p>
           <hr class="my-4" />
@@ -111,10 +119,10 @@
     <div class="container-fluid">
       <div class="container cardContainer">
         <!--added card container class so dynamically created row can go here-->
-        <div class="row cardRow">
+        <div class="row cardRow1">
           <div class="col-sm-4">
             <div class="card">
-              <div class="post-image">
+            <div class="post-image">
                 <img src="./assets/images/images4.jpg" class="img-responsive">
             </div>
             <div class="news-content">
@@ -223,6 +231,7 @@
       </div>
     </div>
   </section>
+  
 
     <!--I usually like to make a container div for each section of my page
     lets make this like the greeting section or something-->

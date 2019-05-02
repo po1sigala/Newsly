@@ -1,3 +1,7 @@
+html {
+  position: relative;
+  min-height: 100%;
+ }
 /* I think the only must have would be a media query for small screens
  small screens should maybe only display one card in the results section instead of two or thre
  what color should our links be and should they turn colors on \hover or after clicks*/
@@ -8,14 +12,14 @@ body {
   font-family: "Roboto Condensed", sans-serif !important;
   background: #262626 !important;
 }
-section {
+/* section {
   padding: 180px 0 0;
-}
+} */
 .card {
-  position: relative;
+  /* position: relative; */
   height: 400px;
   /* overflow: hidden; */
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.5);
 }
 .card .post-image {
   height: 300px;
@@ -88,8 +92,83 @@ h1 {
 .lead text-center {
   font-family: 'Abril Fatface';
 }
-.form-inline {
-  align-content: center
+.input-group {
+  margin-left: 15px;
+  margin-bottom: 15px;
+  margin-top: 15px;
 }
-
-
+.input-group-text {
+  position: relative;
+	display: block;
+	margin: 5px;
+  cursor: pointer;
+  padding: 1px;
+}
+label {
+  margin-left: 10px;
+  font-weight: bold;
+  position: relative;
+	display: block;
+	margin: 0;
+	border-top: 1px solid #eee;
+  cursor: pointer;
+}
+.sidebar {
+  position: fixed;
+  top: 283px;
+  bottom: 0;
+  left: 0;
+  z-index: 1000;
+  display: block;
+  padding: 20px;
+  overflow-x: hidden;
+  overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+  background-color: #f5f5f5;
+  border-right: 1px solid #eee;
+}
+h2 {
+  font-family: 'Abril Fatface';
+  font-weight: 100;
+  border-bottom: black 4px solid;
+  text-align: center;
+}
+.container {
+  float: right;
+}
+.twitterItems {
+  border-bottom: 1px solid #ddd;
+  padding: 5px;
+}
+.dropdown-menu.show {
+  display: block;
+  border: gray solid;
+}
+.jumbotron {
+  background-image: url("../images/images5.png");
+  box-shadow: 5 10px 15px rgba(0, 0, 0, 0.5);
+ }
+ 
+ .title-container {
+  background-color: white;
+  border: 3px solid darkgray;
+  border-radius: 60px;
+  opacity: .8;
+  width: 60%;
+  box-shadow: 5 10px 15px rgba(248, 248, 248, 0.5);
+ 
+ }
+ footer {
+  background-color: white;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 100px;
+  width: 100%;
+  overflow: hidden;
+  margin: 100rem 0 -2rem 0;
+ }
+@media only screen and (min-width:300px) and (max-width:767px) {
+  .media {
+    flex-wrap:wrap;
+  }
+}
