@@ -9,13 +9,12 @@
 
 
 //trying to dynamically create custom col breaks so if its on card col-md-12
-var numOfCards=0;
+// var numOfCards=0;
 // var numColumns= 12;
 // if (numOfCards=1) 
 
 $(document).ready(function(){
     $("#lastSearch").text(localStorage.getItem("lastSearch"));
-
     // on ready we want any last searched terms to be displayed from local storage
 
 $("#searchButton").on("click",function(){
@@ -46,7 +45,7 @@ $("#searchButton").on("click",function(){
         localStorage.setItem("lastSearch",search);
         $("#lastSearch").text(localStorage.getItem("lastSearch"));
     
-    // searchTwitter(search); gonna search twiter here
+    // searchTwitter(search);
 
 })
 var searchSites= function(search, source){
@@ -63,7 +62,7 @@ var searchSites= function(search, source){
         method: "GET"
     })
         .then(function(response){
-             numOfCards++;
+            
             //goal of this block is to create our card div with the image divs in it and append it to the card row
 
                 var newimage= $("<img>").attr("src", response.articles[0].urlToImage ).addClass("imgFit");
@@ -86,36 +85,11 @@ var searchSites= function(search, source){
                 cardDiv.append(newDiv).append(newsContentDiv);
                 //append the dive witg the image of the query into the div that contains the whole card
 
-                var responsiveDiv = $("<div>").addClass("col-sm-4").addClass("cardNumber"+numOfCards);
-                console.log("this card has an id of cardNumber"+numOfCards)
+                var responsiveDiv = $("<div>").addClass("col-sm-4");
                 //variable that holds the div which uses a bootstrap class to divide the 12 normal coumns by 4 to make 3 columns
                 responsiveDiv.append(cardDiv);
-
-
-
-
                 //append all the dynamically created card info into this div
-
-                // working on this following code to dynamiclaly create rows every three searches
-
-                numRows= Math.ceil(numOfCards/3);//calculate the rows needed to house all the cards
-
-
-                if (numRows>1){
-                    console.log("numrows is" + numRows);
-                    for (i=1;i<numRows;i++){//run a function the same number of times as i want rows created
-                        // var spacing= $("<br>");
-                        var newRow= $("<div>").addClass("cardrow"+numRows);//row 2 row 3 etc etc depending on how many sources chosen
-                        // newRow.append(spacing);
-                        console.log("looped")//should pop up one less time than the value of numRows
-                        $(".cardContainer").append(newRow);//put the new row in the card div
-                        
-                    }
-                }
-
-
-                $(".cardRow"+numRows).append(responsiveDiv);
-                
+                $(".cardRow1").append(responsiveDiv);
                 //append the card into the card section of the html
                 
                 //create our news content div divs in it and append that to the card div
@@ -147,7 +121,7 @@ var searchSites= function(search, source){
 //                       +search;
 // $.ajax({
 //     url: twitterQueryURL,
-//     authorization: "2424115598-HJLl6fWq6zt2lSfsfDw9DNPH9IazrmgoJ7X8PC8",
+//     authorization: "basic 2424115598-HJLl6fWq6zt2lSfsfDw9DNPH9IazrmgoJ7X8PC8",
 //     dataType:"jsonp",
 //     method: "GET"
 // })
@@ -159,8 +133,22 @@ var searchSites= function(search, source){
 });
 
 //below is tester code im not sure if i want 
-
- // 
+ // numOfCards++ this was under the response function
+ // //working on this following code to dynamiclaly create rows every three searches
+                // numRows= Math.ceil(numOfCards/3);//calculate the rows needed to house all the cards
+                // if (numRows>1){
+                //     console.log("numrows is" + numRows);
+                //     for (i=1;i<numRows;i++){//run a function the same number of times as i want rows created
+                //         // var spacing= $("<br>");
+                //         var newRow= $("<div>").addClass("row"+numRows);//row 2 row 3 etc etc depending on how many sources chosen
+                //         // newRow.append(spacing);
+                //         console.log("looped")//should pop up one less time than the value of numRows
+                //         $(".cardContainer").append(newRow);//put the new row in the card div
+                        
+                //     }
+                // }else{
+                // $(".cardRow").append(responsiveDiv);//otherwise just put it in the row already there if no new rows needed
+                // }
 /*fucntions section
 for dynamically created results
     dynamically create whatever the card class with the header and footer
