@@ -23,16 +23,25 @@
     <link rel="stylesheet" href="./assets/css/reset.css" />
   </head>
   <body>
-        <!-- Jumbotron -->
-        <div class="jumbotron">
-          <h1 class="display-4 text-center">NEWSLY</h1>
-          <p class="lead text-center">
-            This will allow you to search for news in multiple platforms and compare discussions
-          </p>
-          <hr class="my-4" />
-        </div>
-        <div class="col-sm-8"></div>
-
+     <!-- Jumbotron -->
+    <div class="jumbotron">
+      <div class="background-image"></div>
+      <div class="title-container text-center mx-auto">
+        <h1 class="display-4 text-center">NEWSLY</h1>
+        <p class="lead text-center">
+          Exapnd Your View Point
+        </p>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-4">
+          <h2>About</h2>
+          <p>To expand your viewpoint on a discussed topic</p>
+          <hr class="hidden-sm hidden-md hidden-lg" />
+          <h3>What's on your mind?</h3>
+          <p>Select the platform you're interested in</p>
+          <hr class="hidden-sm hidden-md hidden-lg" />
            <!-- Navbar -->
               <form class="form-inline my-2 my-lg-0"> 
                 <div class="input-group">
@@ -105,16 +114,116 @@
               </form>
             </div>
           </nav>
+           <!-- accordion -->
+           <!-- <div class="accordion" id="accordionExample">
+            <div class="card">
+              <div class="card-header" id="headingOne">
+                <h2 class="mb-0">
+                  <button
+                    class="btn btn-link"
+                    type="button"
+                    data-toggle="collapse"
+                    data-target="#collapseOne"
+                    aria-expanded="true"
+                    aria-controls="collapseOne"
+                  >
+                    #Trending1
+                    <i class="fa fa-twitter"> </i>
+                  </button>
+                </h2>
+              </div>
 
+              <div
+                id="collapseOne"
+                class="collapse show"
+                aria-labelledby="headingOne"
+                data-parent="#accordionExample"
+              >
+                <div class="card-body">
+                  post
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-header" id="headingTwo">
+                <h2 class="mb-0">
+                  <button
+                    class="btn btn-link collapsed"
+                    type="button"
+                    data-toggle="collapse"
+                    data-target="#collapseTwo"
+                    aria-expanded="false"
+                    aria-controls="collapseTwo"
+                  >
+                    #Trending2
+                    <i class="fa fa-twitter"> </i>
+                  </button>
+                </h2>
+              </div>
+              <div
+                id="collapseTwo"
+                class="collapse"
+                aria-labelledby="headingTwo"
+                data-parent="#accordionExample"
+              >
+                <div class="card-body">
+                  Post
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-header" id="headingThree">
+                <h2 class="mb-0">
+                  <button
+                    class="btn btn-link collapsed"
+                    type="button"
+                    data-toggle="collapse"
+                    data-target="#collapseThree"
+                    aria-expanded="false"
+                    aria-controls="collapseThree"
+                  >
+                    #Trending3
+                    <i class="fa fa-twitter"> </i>
+                  </button>
+                </h2>
+              </div>
+              <div
+                id="collapseThree"
+                class="collapse"
+                aria-labelledby="headingThree"
+                data-parent="#accordionExample"
+              >
+                <div class="card-body">
+                  post
+                </div>
+              </div>
+            </div>
+          </div>
+          <hr class="hidden-sm hidden-md hidden-lg" /> -->
+          <!-- Recently -->
+          <!-- <h3>Recently Searched</h3>
+          <p>....</p>
+          <hr class="hidden-sm hidden-md hidden-lg" />
+          <h3>Quick Links</h3>
+          <ul class="nav nav-pills nav-stacked">
+            <li><a href="https://www.reddit.com/">Reddit</a></li>
+            <li><a href="https://www.cnn.com/">CNN</a></li>
+            <li><a href="https://bleacherreport.com/">Bleacher Report</a></li>
+          </ul>
+          <hr class="hidden-sm hidden-md hidden-lg" />
+        </div>  -->
     <!-- cards -->
-  <section>
+    <div class="col-sm-8">
+      <section>
     <div class="container-fluid">
       <div class="container cardContainer">
         <!--added card container class so dynamically created row can go here-->
-        <div class="row cardRow">
+
+        <div class="row cardRow1">
+
           <div class="col-sm-4">
-            <div class="card">
-              <div class="post-image">
+            <div class="cards">
+            <div class="post-image">
                 <img src="./assets/images/images4.jpg" class="img-responsive">
             </div>
             <div class="news-content">
@@ -149,7 +258,9 @@
 
         </div>
          <div class="col-sm-4">
-          <div class="card">
+
+          <div class="cards">
+
                 <div class="post-image">
                   <img src="./assets/images/image1.png" class="img-responsive">
               </div>
@@ -185,7 +296,7 @@
 
         </div>
         <div class="col-sm-4">
-            <div class="card">
+            <div class="cards">
               <div class="post-image">
                 <img src="./assets/images/image2.jpg" class="img-responsive">
             </div>
@@ -222,7 +333,16 @@
         </div>
       </div>
     </div>
+      <br><br><br><br>
+      <div class="row cardRow2"></div>
+      <div class="row cardRow3"></div>
+      <div class="row cardRow4"></div>
+      <div class="row cardRow5"></div>
+      <div class="row cardRow6"></div>
+      <div class="row cardRow7"></div>
+    </div>
   </section>
+  
 
     <!--I usually like to make a container div for each section of my page
     lets make this like the greeting section or something-->
@@ -262,3 +382,4 @@
 
 
 </html>
+
