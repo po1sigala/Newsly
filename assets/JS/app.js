@@ -9,15 +9,36 @@
 
 
 //trying to dynamically create custom col breaks so if its on card col-md-12
-// var numOfCards=0;
+
 // var numColumns= 12;
 // if (numOfCards=1) 
 
 $(document).ready(function(){
+
+    var numOfCards=0;
+
+
     $("#lastSearch").text(localStorage.getItem("lastSearch"));
     // on ready we want any last searched terms to be displayed from local storage
 
+
+    var searchTwitter= function(){
+        var twitterQueryURL= "https://api.twitter.com/1.1/trends/place.json?id=1"
+        $.ajax({
+            url: twitterQueryURL,
+            dataType:"jsonp",
+            method: "GET"
+        })
+            .then(function(response){
+                
+                console.log("twitter function is running" + response);
+            })
+        }
+        //our twitter request
+    searchTwitter();
+    //running twitter request on load of page
 $("#searchButton").on("click",function(){
+    numOfCards=0;
 
     $(".cardRow1").empty();//clear out the example cards
     var search= $(".searchBox").val();//deaclare a search variable set to the text of the search box
@@ -45,7 +66,7 @@ $("#searchButton").on("click",function(){
         localStorage.setItem("lastSearch",search);
         $("#lastSearch").text(localStorage.getItem("lastSearch"));
     
-    // searchTwitter(search);
+    
 
 })
 var searchSites= function(search, source){
@@ -62,6 +83,9 @@ var searchSites= function(search, source){
         method: "GET"
     })
         .then(function(response){
+            numOfCards++;
+            var rowNum= Math.ceil(numOfCards/3)
+
             console.log(response);
             //goal of this block is to create our card div with the image divs in it and append it to the card row
 
@@ -94,7 +118,7 @@ var searchSites= function(search, source){
                 //variable that holds the div which uses a bootstrap class to divide the 12 normal coumns by 4 to make 3 columns
                 responsiveDiv.append(cardDiv);
                 //append all the dynamically created card info into this div
-                $(".cardRow1").append(responsiveDiv);
+                $(".cardRow"+rowNum).append(responsiveDiv);
                 //append the card into the card section of the html
                 
                 //create our news content div divs in it and append that to the card div
@@ -121,20 +145,7 @@ var searchSites= function(search, source){
 }
 
 // below is where my twitter request is happening it should run when the page refreshes and get the trending tweets globally
-// var searchTwitter= function(search){
-// var twitterQueryURL= "https://api.twitter.com/1.1/search/tweets.json?q="
-//                       +search;
-// $.ajax({
-//     url: twitterQueryURL,
-//     authorization: "basic 2424115598-HJLl6fWq6zt2lSfsfDw9DNPH9IazrmgoJ7X8PC8",
-//     dataType:"jsonp",
-//     method: "GET"
-// })
-//     .then(function(response){
-        
-//         console.log("twitter function is running")(response);
-//     })
-// }
+
 });
 
 //below is tester code im not sure if i want 
