@@ -153,6 +153,7 @@ $(document).ready(function() {
 // }else{
 // $(".cardRow").append(responsiveDiv);//otherwise just put it in the row already there if no new rows needed
 // }
+
 /*fucntions section
 for dynamically created results
   dynamically create whatever the card class with the header and footer
@@ -178,6 +179,7 @@ API
   NewsAPI to query sites
 */
 
+
 /* var selectedSites= ["bleacher-report","bbc-news","reddit-r-all","fox-news", "cnn"]//empty array to contain the sites I want searched this array wil lget aded when user checks a box
 this was an array i made that is no longer necessary bc i wil be creating the array within  the search function using .map*/
 
@@ -185,9 +187,11 @@ this was an array i made that is no longer necessary bc i wil be creating the ar
 buy just using .map I can create an array every time a function runs
 
 $("clickboxid").on("click",function(){
+
   if(selectedSites.includes(this.attr("id"))){//this should say if our array contains an element that matches the clicked boxes id do something
       selectedSites.splice(selectedSites.indexof(this.attr("id")),0)//removes it from the array
   }else{
       selectedSites.push(this.attr("id"))//if its notin the array add it
   }
 })*/
+
