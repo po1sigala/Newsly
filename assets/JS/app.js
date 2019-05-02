@@ -62,7 +62,7 @@ var searchSites= function(search, source){
         method: "GET"
     })
         .then(function(response){
-            
+            console.log(response);
             //goal of this block is to create our card div with the image divs in it and append it to the card row
 
                 var newimage= $("<img>").attr("src", response.articles[0].urlToImage ).addClass("imgFit");
@@ -77,8 +77,13 @@ var searchSites= function(search, source){
                 var header = $("<h2>").addClass("post-header").text(response.articles[0].title);
                 var summary = $("<p>").text(response.articles[0].description);
                 var categoryTitle= $("<span>").addClass("category").text(response.articles[0].source.name);
+
+
+                var linktosite=$("<a>").addClass("btn btn-primary").attr("href",response.articles[0].url).attr("target", "_blank").text("go to article");
+
+
                 var newsContentDiv=$("<div>").addClass("news-content")
-                newsContentDiv.append(categoryTitle).append(header).append(summary);
+                newsContentDiv.append(categoryTitle).append(header).append(summary).append(linktosite);
                 //
                 var cardDiv= $("<div>").addClass("card");
                 //variable that contains my div where all the query cards go
