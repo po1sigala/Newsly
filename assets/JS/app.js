@@ -20,7 +20,7 @@ $(document).ready(function(){
 
 $("#searchButton").on("click",function(){
 
-    $(".cardRow").empty();//clear out the example cards
+    $(".cardRow1").empty();//clear out the example cards
     var search= $(".searchBox").val();//deaclare a search variable set to the text of the search box
 
 
@@ -46,7 +46,7 @@ $("#searchButton").on("click",function(){
         localStorage.setItem("lastSearch",search);
         $("#lastSearch").text(localStorage.getItem("lastSearch"));
     
-    searchTwitter(search);
+    // searchTwitter(search); gonna search twiter here
 
 })
 var searchSites= function(search, source){
@@ -113,13 +113,9 @@ var searchSites= function(search, source){
                     }
                 }
 
-                $(".cardRow"+numRows).append(responsiveDiv);//otherwise just put it in the row already there if no new rows needed
-                }
 
-
-
-
-                $(".cardRow").append(responsiveDiv);
+                $(".cardRow"+numRows).append(responsiveDiv);
+                
                 //append the card into the card section of the html
                 
                 //create our news content div divs in it and append that to the card div
@@ -160,7 +156,7 @@ var searchSites= function(search, source){
 //         console.log("twitter function is running")(response);
 //     })
 // }
-// });
+});
 
 //below is tester code im not sure if i want 
 
