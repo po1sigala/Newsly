@@ -67,15 +67,15 @@ $(document).ready(function() {
   function searchSites (search, type, source) {
     if (type === "source") {
       var newsQueryURL =
-      "https://newsapi.org/v2/sources?apiKey=2328e350ebab4672a9dfa7ce0fdddacd"
+      // "https://newsapi.org/v2/sources?apiKey=2328e350ebab4672a9dfa7ce0fdddacd"
       //sources query. keep above commented out unless you just want to see the possible sources
 
-        // "https://newsapi.org/v2/everything?q=" + //queries all articles
-        // search +
-        // "&sources=" + //searches articles above for the text the user put in the text box and adds a input for specific sites
-        // source + //here we are populating the id's the API takes from our array. the id's of the checked boxes match the API source ID's
-        // "&pageSize=1" + //I am just taking the firts response that oure API gives us
-        // "&apiKey=2328e350ebab4672a9dfa7ce0fdddacd"; //my API key
+        "https://newsapi.org/v2/everything?q=" + //queries all articles
+        search +
+        "&sources=" + //searches articles above for the text the user put in the text box and adds a input for specific sites
+        source + //here we are populating the id's the API takes from our array. the id's of the checked boxes match the API source ID's
+        "&pageSize=1" + //I am just taking the firts response that oure API gives us
+        "&apiKey=2328e350ebab4672a9dfa7ce0fdddacd"; //my API key
     } else {
       //creating a new queries for top headlines in the country
       var newsQueryURL =
