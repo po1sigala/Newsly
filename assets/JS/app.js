@@ -12,27 +12,23 @@
 $(document).ready(function() {
   var numOfCards = 0;
 
-  $("#lastSearch").text(localStorage.getItem("lastSearch"));
-  // on ready we want any last searched terms to be displayed from local storage
+  //clear out the example cards
+  $(".cardRow1").empty(); 
 
-  var searchTwitter = function() {
-    var twitterQueryURL = "https://api.twitter.com/1.1/trends/place.json?id=1";
-    $.ajax({
-      url: twitterQueryURL,
-      dataType: "jsonp",
-      method: "GET"
-    }).then(function(response) {
-      console.log("twitter function is running" + response);
-    });
-  };
-  //our twitter request
-  searchTwitter();
-  //running twitter request on load of page
+  //get the trending topic
+  searchSites("us", "headline");
+ // on ready we want any last searched terms to be displayed from local storage
+  $("#lastSearch").text(localStorage.getItem("lastSearch"));
+ 
+
+//query our news api for our users search  
   $("#searchButton").on("click", function() {
+    //track how many cards are being made they should reset after each search
     numOfCards = 0;
 
     $(".cardRow1").empty(); //clear out the example cards
     var search = $(".searchBox").val(); //deaclare a search variable set to the text of the search box
+    $("#searchTitle").text("Articles relating to " +search);
 
     // get all boxes our user checked and put them into and array
     var checkedBoxes = $("input:checked")
@@ -50,24 +46,36 @@ $(document).ready(function() {
     // searchSites(selectedSites);//if working correctly search sites will run with a source parameter of i aka which site the user wants to check
 
     //below we want to add searches to local storage for next time the user loads
-    localStorage.clear();
+    localStorage.clear("lastSearch");
     localStorage.setItem("lastSearch", search);
     $("#lastSearch").text(localStorage.getItem("lastSearch"));
   });
-  //creating a on click function
-  $(".country").on("click", function() {
-    $(".cardRow1").empty(); //clear out the example cards
-    searchSites("us", "headline");
-  });
-  var searchSites = function(search, type, source) {
+
+
+  //below is a function that listens for when user clicks an article link and stores it in memory
+  $(document).on("click",".siteLink", function(){
+    $("#lastSite").empty();
+    localStorage.clear("siteLink");
+    var siteLink= $(this).val();
+    localStorage.setItem("siteLink",siteLink);
+    var linktosite= $("<a>").text($(this).attr("id"))
+      .attr("href", siteLink)
+      .attr("target", "_blank")
+    $("#lastSite").append(linktosite);
+  })
+ 
+  function searchSites (search, type, source) {
     if (type === "source") {
       var newsQueryURL =
-        "https://newsapi.org/v2/everything?q=" + //queries all articles
-        search +
-        "&sources=" + //searches articles above for the text the user put in the text box and adds a input for specific sites
-        source + //here we are populating the id's the API takes from our array. the id's of the checked boxes match the API source ID's
-        "&pageSize=1" + //I am just taking the firts response that oure API gives us
-        "&apiKey=2328e350ebab4672a9dfa7ce0fdddacd"; //my API key
+      "https://newsapi.org/v2/sources?apiKey=2328e350ebab4672a9dfa7ce0fdddacd"
+      //sources query. keep above commented out unless you just want to see the possible sources
+
+        // "https://newsapi.org/v2/everything?q=" + //queries all articles
+        // search +
+        // "&sources=" + //searches articles above for the text the user put in the text box and adds a input for specific sites
+        // source + //here we are populating the id's the API takes from our array. the id's of the checked boxes match the API source ID's
+        // "&pageSize=1" + //I am just taking the firts response that oure API gives us
+        // "&apiKey=2328e350ebab4672a9dfa7ce0fdddacd"; //my API key
     } else {
       //creating a new queries for top headlines in the country
       var newsQueryURL =
@@ -107,10 +115,11 @@ $(document).ready(function() {
         .text(response.articles[0].source.name);
 
       var linktosite = $("<a>")
-        .addClass("btn btn-primary")
+        .addClass("btn btn-primary siteLink")
         .attr("href", response.articles[0].url)
         .attr("target", "_blank")
-        .text("go to article");
+        .text("go to article")
+        .attr("id",response.articles[0].title);
 
       var newsContentDiv = $("<div>").addClass("news-content");
       newsContentDiv
@@ -119,7 +128,7 @@ $(document).ready(function() {
         .append(summary)
         .append(linktosite);
       //
-      var cardDiv = $("<div>").addClass("card");
+      var cardDiv = $("<div>").addClass("cards");
       //variable that contains my div where all the query cards go
       cardDiv.append(newDiv).append(newsContentDiv);
       //append the dive witg the image of the query into the div that contains the whole card

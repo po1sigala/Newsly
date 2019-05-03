@@ -39,10 +39,10 @@
           <h2>About</h2>
           <p>Expand your viewpoint by searching for a topic in multiple platforms</p>
           <hr class="hidden-sm hidden-md hidden-lg" />
-          <h3>What's on your mind?</h3>
-          <p>Select the platform you're interested in</p>
+          <h2>What's on your mind?</h2>
+          <p>Type a topic in the search bar and select the sites you want to check.</p>
           <hr class="hidden-sm hidden-md hidden-lg" />
-          <button class="country">USA</button>
+    
            <!-- Navbar -->
               <form class="form-inline my-2 my-lg-0"> 
                 <div class="input-group">
@@ -99,23 +99,52 @@
                         </div>
                         <form> <label id="bleacher-report">BLEACHER REPORT</label><br> </form>
                       </div>   
-                      <div class="input-group mb-3 id=">
+                      <!-- <div class="input-group mb-3 id=">
                         <div class="input-group-prepend">
                           <div class="input-group-text">
                             <input type="checkbox" id="all" aria-label="Checkbox for following text input">
-                            <!-- added an id here on the button -->
+                            added an id here on the button
                           </div>
                         </div>
                         <form> <label id="all">ALL</label><br> </form>
-                      </div>   
+                      </div>    -->
                     
                     </div>
                   </div>
                 </div>
               </form>
+            <h2>Previously Searched</h2>
+            <p id="lastSearch"></p>
+            <h2>sites you were interested in</h2>
+            <p id="lastSite"></p>
             </div>
           </nav>
-           <!-- accordion -->
+         
+    <!-- cards -->
+    <div class="col-sm-8">
+
+    <div class="container-fluid">
+      <div class="row">
+      <h2 id="searchTitle">Trending Headline : USA</h2>
+    </div>
+      <div class="container cardContainer">
+        <!--added card container class so dynamically created row can go here-->
+        <div class="wrapper">
+        <div class="row cardRow1"></div>
+      </div>
+        <div class="row cardRow2"></div>
+        <div class="row cardRow3"></div>
+        <div class="row cardRow4"></div>
+        <div class="row cardRow5"></div>
+        <div class="row cardRow6"></div>
+        <div class="row cardRow7"></div>
+    </div>
+      <br><br><br><br>
+    
+    </div>
+  </section>
+  
+    <!-- accordion -->
            <!-- <div class="accordion" id="accordionExample">
             <div class="card">
               <div class="card-header" id="headingOne">
@@ -212,119 +241,6 @@
           </ul>
           <hr class="hidden-sm hidden-md hidden-lg" />
         </div>  -->
-    <!-- cards -->
-    <div class="col-sm-8">
-
-    <div class="container-fluid">
-      <div class="container cardContainer">
-        <!--added card container class so dynamically created row can go here-->
-
-        <div class="row cardRow1">
-
-          <div class="col-sm-4">
-            <div class="cards">
-            <div class="post-image">
-                <img src="./assets/images/images5.png" class="img-responsive">
-            </div>
-            <div class="news-content">
-              <span class="category">News</span>
-              <div class="post-meta">            
-                <div class="clearfix"></div>
-              </div>
-              <h2 class="post-header">
-                Let's go Warriors!
-              </h2>
-              <p>nkvnrefjvsjdvnadfkzjnadzvjbfknaejdznfb</p>
-            </div>
-          </div>
-
-        </div>
-         <div class="col-sm-4">
-
-          <div class="cards">
-
-                <div class="post-image">
-                  <img src="./assets/images/image6.png" class="img-responsive">
-              </div>
-                <div class="news-content">
-                  <span class="category">Sports</span>
-                  <div class="post-meta">
-                    <span class="author">
-                      <a href="#">
-                        <i class="fa fa-user" aria-hidden="true"></i>
-                        someone famous
-                      </a>
-                    </span>
-                    <span class="author">
-                      <a href="#">
-                        <i class="fa fa-clock-o" aria-hidden="true"></i>
-                          May 5, 2019
-                      </a>
-                    </span>
-                    <span class="comments">
-                        <a href="#">
-                          <i class="fa fa-commenting" aria-hidden="true"></i>
-                            83
-                        </a>
-                    </span>
-                    <div class="clearfix"></div>
-                  </div>
-                  <h2 class="post-header">
-                    Let's go Warriors!
-                  </h2>
-                  <p>nkvnrefjvsjdvnadfkzjnadzvjbfknaejdznfb</p>
-              </div>
-          </div>
-
-        </div>
-        <div class="col-sm-4">
-            <div class="cards">
-              <div class="post-image">
-                <img src="./assets/images/image7.png" class="img-responsive">
-            </div>
-            <div class="news-content">
-              <span class="category">Discussions</span>
-              <div class="post-meta">
-                <span class="author">
-                  <a href="#">
-                    <i class="fa fa-user" aria-hidden="true"></i>
-                    someone famous
-                  </a>
-                </span>
-                <span class="author">
-                  <a href="#">
-                     <i class="fa fa-clock-o" aria-hidden="true"></i>
-                      May 5, 2019
-                  </a>
-                </span>
-                <span class="comments">
-                    <a href="#">
-                      <i class="fa fa-commenting" aria-hidden="true"></i>
-                        83
-                    </a>
-                </span>
-                <div class="clearfix"></div>
-              </div>
-              <h2 class="post-header">
-                Let's go Warriors!
-              </h2>
-              <p>nkvnrefjvsjdvnadfkzjnadzvjbfknaejdznfb</p>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </div>
-      <br><br><br><br>
-      <div class="row cardRow2"></div>
-      <div class="row cardRow3"></div>
-      <div class="row cardRow4"></div>
-      <div class="row cardRow5"></div>
-      <div class="row cardRow6"></div>
-      <div class="row cardRow7"></div>
-    </div>
-  </section>
-  
 
     <!--I usually like to make a container div for each section of my page
     lets make this like the greeting section or something-->
@@ -351,6 +267,23 @@
     <!--at the bottom of the page I think a ticker would be cool I would like to display the top 5 trending tweets
     maybe some stock info? idk whatever we feel like. it might not even be necessary-->
     <!--the final thing we want to do is hide an easter egg in this file somewhere for our snake game-->
+
+    <!--cool source id's to add
+    
+    abc-news
+    bbc-sport
+    buzzfeed
+    espn
+    financial-post
+    google-news
+    new-scientist
+    politico
+    polygon
+    techcrunch
+    the-new-york-times
+    vice-news
+
+  -->
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src= "assets/JS/app.js"></script>
