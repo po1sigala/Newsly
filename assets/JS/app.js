@@ -20,9 +20,32 @@ $(document).ready(function() {
   // on ready we want any last searched terms to be displayed from local storage
   $("#lastSearch").text(localStorage.getItem("lastSearch"));
 
-  //query our news api for our users search
+  //query our news api for our users search when they click search
   $("#searchButton").on("click", function() {
-    //track how many cards are being made they should reset after each search
+    clearPassAndStore();
+  });
+
+  $(document).on("keypress",function(enter){
+    if(enter.which==13){
+      event.preventDefault();
+      clearPassAndStore();
+    }
+  }) 
+
+  //below is a function that listens for when user clicks an article link and stores it in memory
+  $(document).on("click", ".siteLink", function() {
+    $("#lastSite").empty();
+    localStorage.clear("siteLink");
+    var siteLink = $(this).val();
+    localStorage.setItem("siteLink", siteLink);
+    var linktosite = $("<a>")
+      .text($(this).attr("id"))
+      .attr("href", siteLink)
+      .attr("target", "_blank");
+    $("#lastSite").append(linktosite);
+  });
+
+  function clearPassAndStore(){
     numOfCards = 0;
 
     $(".cardRow1").empty(); //clear out the example cards
@@ -48,20 +71,8 @@ $(document).ready(function() {
     localStorage.clear("lastSearch");
     localStorage.setItem("lastSearch", search);
     $("#lastSearch").text(localStorage.getItem("lastSearch"));
-  });
-
-  //below is a function that listens for when user clicks an article link and stores it in memory
-  $(document).on("click", ".siteLink", function() {
-    $("#lastSite").empty();
-    localStorage.clear("siteLink");
-    var siteLink = $(this).val();
-    localStorage.setItem("siteLink", siteLink);
-    var linktosite = $("<a>")
-      .text($(this).attr("id"))
-      .attr("href", siteLink)
-      .attr("target", "_blank");
-    $("#lastSite").append(linktosite);
-  });
+    
+  }
 
   function searchSites(search, type, source) {
     if (type === "source") {
