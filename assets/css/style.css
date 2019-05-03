@@ -22,7 +22,7 @@ body {
 .cards {
   /* position: relative; */
   /* height: 400px; */
-  /* overflow: hidden; */
+  overflow: hidden;
   box-shadow: 0 10px 15px rgba(0, 0, 0, 0.5);
 }
 .cards .post-image {
@@ -37,7 +37,7 @@ body {
 }
 .cards .news-content {
   position: absolute;
-  padding: 20px;
+  padding: 10px;
   bottom: -150px;
   background: #fff;
   transition: 5s;
@@ -117,19 +117,7 @@ label {
 	border-top: 1px solid #eee;
   cursor: pointer;
 }
-/* .sidebar {
-  position: fixed;
-  top: 283px;
-  bottom: 0;
-  left: 0;
-  z-index: 1000;
-  display: block;
-  padding: 20px;
-  overflow-x: hidden;
-  overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
-  /* background-color: #f5f5f5;
-  border-right: 1px solid #eee;
-} */ 
+
 h2 {
   font-family: 'Abril Fatface';
   font-weight: 100;
