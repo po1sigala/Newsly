@@ -45,10 +45,20 @@ $(document).ready(function() {
     $("#lastSite").append(linktosite);
   });
 
+  function emptyRows(){
+    $(".cardRow1").empty()
+    $(".cardRow2").empty()
+    $(".cardRow3").empty()
+    $(".cardRow4").empty()
+    $(".cardRow5").empty()
+    $(".cardRow6").empty()
+    $(".cardRow7").empty()
+  }
+
   function clearPassAndStore(){
     numOfCards = 0;
 
-    $(".cardRow1").empty(); //clear out the example cards
+    emptyRows(); //clear out the example cards
     var search = $(".searchBox").val(); //deaclare a search variable set to the text of the search box
     $("#searchTitle").text("Articles relating to " + search);
 
