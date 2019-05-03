@@ -10,43 +10,27 @@ body {
   margin: 0;
   padding: 0;
   font-family: "Roboto Condensed", sans-serif !important;
-  background: white !important;
+  background: rgb(196, 194, 194)!important;
 }
+input.checkbox {
+    width: 40px; 
+    height: 40px; 
+    color: blue;
+}
+
 .imgFit{
   max-width: 100%;
   max-height: 100%;
 }
-/* section {
-  padding: 180px 0 0;
-} */
+
 .cards {
-  /* position: relative; */
-  /* height: 400px; */
-  overflow: hidden;
   box-shadow: 0 10px 15px rgba(0, 0, 0, 0.5);
 }
-.cards .post-image {
-  height: 300px;
-  overflow: hidden;
-}
-.cards .post-image img {
-  transition: 5s;
-}
-.cards:hover .post-image img {
-  transform: scale(1.2) translate(-50px);
-}
-.cards .news-content {
-  position: absolute;
-  padding: 10px;
-  bottom: -150px;
-  background: #fff;
-  transition: 5s;
-}
+
 .cards:hover .news-content {
  bottom: 0px;
 }
 .cards .category {
-  position: absolute;
   top: -30px;
   left: 0;
   height: 30px;
@@ -59,10 +43,13 @@ body {
   font-weight: bold;
   transition: 0.5s;
 }
+.siteLink{
+  background: #00b8f4;
+}
 .cards .news-content.post-meta a {
   text-decoration: none;
   padding-right: 10px;
-  color: ;
+
   font-weight: bold;
   transition: 0.5s;
 }
@@ -80,8 +67,8 @@ body {
 }
 .cards .news-content p {
     font-size: 16px;
-    margin: 10px 0 0;
-    padding: 0;
+    margin: 8px 0 0;
+    padding: 8;
     color: black;
     transition: .5s;
     opacity: 0'
@@ -107,6 +94,8 @@ h1 {
 	margin: 5px;
   cursor: pointer;
   padding: 1px;
+  width: 40px;
+  height: 40px;
 }
 label {
   margin-left: 10px;
@@ -117,20 +106,15 @@ label {
 	border-top: 1px solid #eee;
   cursor: pointer;
 }
-
 h2 {
   font-family: 'Abril Fatface';
   font-weight: 100;
   border-bottom: black 4px solid;
   text-align: center;
 }
-.twitterItems {
-  border-bottom: 1px solid #ddd;
-  padding: 5px;
-}
 .dropdown-menu.show {
   display: block;
-  border: gray solid;
+  border: gray solid 1px;
 }
 .jumbotron {
   background-image: url("../images/images5.png");
@@ -146,7 +130,7 @@ h2 {
   box-shadow: 5 10px 15px rgba(248, 248, 248, 0.5);
  
  }
- footer {
+ .footer {
   background-color: white;
   position: absolute;
   left: 0;
@@ -156,7 +140,9 @@ h2 {
   overflow: hidden;
   margin: 100rem 0 -2rem 0;
  }
-
+p{
+  text-align: center;
+}
 @media only screen and (min-width:300px) and (max-width:767px) {
   .media {
     flex-wrap:wrap;
