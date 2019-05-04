@@ -26,3 +26,8 @@ Our team wanted the user to be able to see how one topic is discussed across mul
 * Our arrary is composed of the id's of the buttons. These ids match the newsAPI id search keys.
 * The nature of the sorting of this API's responses means we have to use a for loop and run multiple queries if we want to ensure each source is queried for the input.
 * Populating the id's the API takes from our array. The id's of the checked boxes match the API source ID's.
+
+**COPYRIGHT**
+*Anna Catalla*
+*Alexander Sigala*
+*Renata Oliveira*
