@@ -28,6 +28,6 @@ Our team wanted the user to be able to see how one topic is discussed across mul
 * Populating the id's the API takes from our array. The id's of the checked boxes match the API source ID's.
 
 **COPYRIGHT**
-*Anna Catalla*
-*Alexander Sigala*
+*Anna Catalla*, 
+*Alexander Sigala*, 
 *Renata Oliveira*
