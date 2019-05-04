@@ -12,27 +12,55 @@
 $(document).ready(function() {
   var numOfCards = 0;
 
-  $("#lastSearch").text(localStorage.getItem("lastSearch"));
-  // on ready we want any last searched terms to be displayed from local storage
+  //clear out the example cards
+  $(".cardRow1").empty();
 
-  var searchTwitter = function() {
-    var twitterQueryURL = "https://api.twitter.com/1.1/trends/place.json?id=1";
-    $.ajax({
-      url: twitterQueryURL,
-      dataType: "jsonp",
-      method: "GET"
-    }).then(function(response) {
-      console.log("twitter function is running" + response);
-    });
-  };
-  //our twitter request
-  searchTwitter();
-  //running twitter request on load of page
+  //get the trending topic
+  searchSites("us", "headline");
+  // on ready we want any last searched terms to be displayed from local storage
+  $("#lastSearch").text(localStorage.getItem("lastSearch"));
+
+  //query our news api for our users search when they click search
   $("#searchButton").on("click", function() {
+    clearPassAndStore();
+  });
+
+  $(document).on("keypress",function(enter){
+    if(enter.which==13){
+      event.preventDefault();
+      clearPassAndStore();
+    }
+  }) 
+
+  //below is a function that listens for when user clicks an article link and stores it in memory
+  $(document).on("click", ".siteLink", function() {
+    $("#lastSite").empty();
+    localStorage.clear("siteLink");
+    var siteLink = $(this).val();
+    localStorage.setItem("siteLink", siteLink);
+    var linktosite = $("<a>")
+      .text($(this).attr("id"))
+      .attr("href", siteLink)
+      .attr("target", "_blank");
+    $("#lastSite").append(linktosite);
+  });
+
+  function emptyRows(){
+    $(".cardRow1").empty()
+    $(".cardRow2").empty()
+    $(".cardRow3").empty()
+    $(".cardRow4").empty()
+    $(".cardRow5").empty()
+    $(".cardRow6").empty()
+    $(".cardRow7").empty()
+  }
+
+  function clearPassAndStore(){
     numOfCards = 0;
 
-    $(".cardRow1").empty(); //clear out the example cards
+    emptyRows(); //clear out the example cards
     var search = $(".searchBox").val(); //deaclare a search variable set to the text of the search box
+    $("#searchTitle").text("Articles relating to " + search);
 
     // get all boxes our user checked and put them into and array
     var checkedBoxes = $("input:checked")
@@ -45,23 +73,36 @@ $(document).ready(function() {
     for (i = 0; i < checkedBoxes.length; i++) {
       var site = checkedBoxes[i]; //we are setting var site to the element at index i
 
-      searchSites(search, site); //we are running the searchsites function with the result of selectedsites{i}
+      searchSites(search, "source", site); //we are running the searchsites function with the result of selectedsites{i}
     }
     // searchSites(selectedSites);//if working correctly search sites will run with a source parameter of i aka which site the user wants to check
 
     //below we want to add searches to local storage for next time the user loads
-    localStorage.clear();
+    localStorage.clear("lastSearch");
     localStorage.setItem("lastSearch", search);
     $("#lastSearch").text(localStorage.getItem("lastSearch"));
-  });
-  var searchSites = function(search, source) {
-    var newsQueryURL =
-      "https://newsapi.org/v2/everything?q=" + //queries all articles
-      search +
-      "&sources=" + //searches articles above for the text the user put in the text box and adds a input for specific sites
-      source + //here we are populating the id's the API takes from our array. the id's of the checked boxes match the API source ID's
-      "&pageSize=1" + //I am just taking the firts response that oure API gives us
-      "&apiKey=2328e350ebab4672a9dfa7ce0fdddacd"; //my API key
+    
+  }
+
+  function searchSites(search, type, source) {
+    if (type === "source") {
+      var newsQueryURL =
+        // "https://newsapi.org/v2/sources?apiKey=2328e350ebab4672a9dfa7ce0fdddacd"
+        //sources query. keep above commented out unless you just want to see the possible sources
+
+        "https://newsapi.org/v2/everything?q=" + //queries all articles
+        search +
+        "&sources=" + //searches articles above for the text the user put in the text box and adds a input for specific sites
+        source + //here we are populating the id's the API takes from our array. the id's of the checked boxes match the API source ID's
+        "&pageSize=1" + //I am just taking the firts response that oure API gives us
+        "&apiKey=2328e350ebab4672a9dfa7ce0fdddacd"; //my API key
+    } else {
+      //creating a new queries for top headlines in the country
+      var newsQueryURL =
+        "https://newsapi.org/v2/top-headlines?country=" +
+        search +
+        "&apiKey=2328e350ebab4672a9dfa7ce0fdddacd";
+    }
 
     console.log(newsQueryURL); //debug to make sure the url is coming out ok
     $.ajax({
@@ -94,10 +135,11 @@ $(document).ready(function() {
         .text(response.articles[0].source.name);
 
       var linktosite = $("<a>")
-        .addClass("btn btn-primary")
+        .addClass("btn btn-primary siteLink")
         .attr("href", response.articles[0].url)
         .attr("target", "_blank")
-        .text("go to article");
+        .text("go to article")
+        .attr("id", response.articles[0].title);
 
       var newsContentDiv = $("<div>").addClass("news-content");
       newsContentDiv
@@ -106,7 +148,7 @@ $(document).ready(function() {
         .append(summary)
         .append(linktosite);
       //
-      var cardDiv = $("<div>").addClass("card");
+      var cardDiv = $("<div>").addClass("cards");
       //variable that contains my div where all the query cards go
       cardDiv.append(newDiv).append(newsContentDiv);
       //append the dive witg the image of the query into the div that contains the whole card
@@ -131,7 +173,7 @@ $(document).ready(function() {
           append everythign to class cardRow
           */
     });
-  };
+  }
 
   // below is where my twitter request is happening it should run when the page refreshes and get the trending tweets globally
 });
@@ -179,19 +221,15 @@ API
   NewsAPI to query sites
 */
 
-
 /* var selectedSites= ["bleacher-report","bbc-news","reddit-r-all","fox-news", "cnn"]//empty array to contain the sites I want searched this array wil lget aded when user checks a box
 this was an array i made that is no longer necessary bc i wil be creating the array within  the search function using .map*/
 
 /*below is a function I was using to check for checked boxes but is no longer necessary because It was extra work
 buy just using .map I can create an array every time a function runs
-
 $("clickboxid").on("click",function(){
-
   if(selectedSites.includes(this.attr("id"))){//this should say if our array contains an element that matches the clicked boxes id do something
       selectedSites.splice(selectedSites.indexof(this.attr("id")),0)//removes it from the array
   }else{
       selectedSites.push(this.attr("id"))//if its notin the array add it
   }
 })*/
-
