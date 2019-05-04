@@ -22,238 +22,168 @@
     <!-- link to css reset sheet -->
     <link rel="stylesheet" href="./assets/css/reset.css" />
   </head>
-  <body>
-        <!-- Jumbotron -->
-        <div class="jumbotron">
-          <h1 class="display-4 text-center">NEWSLY</h1>
-          <p class="lead text-center">
-            This will allow you to search for news in multiple platforms and compare discussions
-          </p>
-          <hr class="my-4" />
-        </div>
-        <div class="col-sm-8"></div>
+
+     <!-- Jumbotron -->
+    <div class="jumbotron">
+      <div class="background-image"></div>
+      <div class="title-container text-center mx-auto">
+        <h1 class="display-4 text-center">NEWSLY</h1>
+        <p class="lead text-center">
+          Expand Your View Point
+        </p>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-4">
+          <h2>About</h2>
+          <p>Expand your viewpoint by searching for a topic in multiple platforms</p>
+          <hr class="hidden-sm hidden-md hidden-lg" />
+          <h2>What's on your mind?</h2>
+          <p>Type a topic in the search bar and select the sites you want to check.</p>
+          <p>Click the arrow for more sites</p>
 
            <!-- Navbar -->
               <form class="form-inline my-2 my-lg-0"> 
                 <div class="input-group">
                   <input type="text" class="form-control searchBox" aria-label="Text input with segmented dropdown button">
                   <div class="input-group-append">
-                    <button type="button" class="btn btn-outline-secondary" id="searchButton">Search</button>
-                    <button type="button" class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+
+                    <button type="button" class="btn btn-outline-danger" id="searchButton">Search</button>
+                    <button type="button" class="btn btn-outline-danger dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+
                       <span class="sr-only">Toggle Dropdown</span>
                     </button>
                     <div class="dropdown-menu">
                       <div class="input-group mb-3">
                         <div class="input-group-prepend">
                           <div class="input-group-text">
-                            <input type="checkbox" id="cnn" aria-label="Checkbox for following text input">
+
+                            <input type="checkbox" id="abc-news" aria-label="Checkbox for following text input">
                             <!-- added an id here on the button -->
                           </div>
                         </div>
-                        <form> <label id="cnn">CNN</label><br> </form>
+                        <form> <label id="abc-news">ABC NEWS</label><br> </form>
+
                       </div>  
                       <div class="input-group mb-3 id=">
                         <div class="input-group-prepend">
                           <div class="input-group-text">
-                            <input type="checkbox" id="fox-news" aria-label="Checkbox for following text input">
+
+                            <input type="checkbox" id="espn" aria-label="Checkbox for following text input">
                             <!-- added an id here on the button -->
                           </div>
                         </div>
-                        <form> <label id="fox-news">FOX NEWS</label><br> </form>
+                        <form> <label id="espn">ESPN</label><br> </form>
+
                       </div>      
                        
                       <div class="input-group mb-3">
                         <div class="input-group-prepend">
                           <div class="input-group-text">
-                            <input type="checkbox" id="bbc-news" aria-label="Checkbox for following text input">
+
+                            <input type="checkbox" id="vice-news" aria-label="Checkbox for following text input">
                             <!-- added an id here on the button -->
                           </div>
                         </div>
-                        <form> <label id="bbc-news">BBC NEWS</label><br> </form>
+                        <form> <label id="vice-news">VICE NEWS</label><br> </form>
+
                       </div>
                       <div class="input-group mb-3">
                         <div class="input-group-prepend">
                           <div class="input-group-text">
-                            <input type="checkbox" id="reddit-r-all" aria-label="Checkbox for following text input">
+
+                            <input type="checkbox" id="buzzfeed" aria-label="Checkbox for following text input">
                             <!-- added an id here on the button -->
                           </div>
                         </div>
-                        <form> <label id="reddit-r-all">Reddit</label><br> </form>
+                        <form> <label id="buzzfeed">BUZZ FEED</label><br> </form>
+
                       </div>
                       <div class="input-group mb-3 id=">
                         <div class="input-group-prepend">
                           <div class="input-group-text">
-                            <input type="checkbox" id="bleacher-report" aria-label="Checkbox for following text input">
+
+                            <input type="checkbox" id="the-new-york-times" aria-label="Checkbox for following text input">
                             <!-- added an id here on the button -->
                           </div>
                         </div>
-                        <form> <label id="bleacher-report">BLEACHER REPORT</label><br> </form>
+                        <form> <label id="the-new-york-times">THE NEW YORK TIMES</label><br> </form>
                       </div>   
-                      <div class="input-group mb-3 id=">
-                        <div class="input-group-prepend">
-                          <div class="input-group-text">
-                            <input type="checkbox" id="all" aria-label="Checkbox for following text input">
-                            <!-- added an id here on the button -->
-                          </div>
-                        </div>
-                        <form> <label id="all">ALL</label><br> </form>
-                      </div>   
-                    
+
+
                     </div>
                   </div>
                 </div>
               </form>
+
+
+              <!-- Main source options   -->
+              <div class="row">
+              <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="checkbox" id="cnn" value="option1">
+                  <label class="form-check-label" for="inlineCheckbox1">CNN</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="checkbox" id="bbc-news" value="option2">
+                  <label class="form-check-label" for="inlineCheckbox2">BBC NEWS</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="fox-news" value="option2">
+                    <label class="form-check-label" for="inlineCheckbox2">FOX NEWS</label>
+                  </div> 
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="bleacher-report" value="option2">
+                    <label class="form-check-label" for="inlineCheckbox2">BLEACHER REPORT</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="checkbox" id="reddit-r-all" value="option2">
+                      <label class="form-check-label" for="inlineCheckbox2">REDDIT</label>
+                    </div>  
+                  </div>
+                  <div class="row"></div>
+             <br>  
+             
+             <br>     
+            <h2>Previously Searched</h2>
+            <p id="lastSearch"></p>
+            <hr class="hidden-sm hidden-md hidden-lg" />
+            <br>
+            <h2>Sites You Were Interested In</h2>
+            <p id="lastSite"></p>
+
             </div>
           </nav>
-
+         
     <!-- cards -->
-  <section>
+    <div class="col-sm-8">
+
     <div class="container-fluid">
+      <div class="row">
+      <h2 id="searchTitle">Trending Headline : USA</h2>
+    </div>
       <div class="container cardContainer">
         <!--added card container class so dynamically created row can go here-->
-        <div class="row cardRow">
-          <div class="col-sm-4">
-            <div class="card">
-              <div class="post-image">
-                <img src="./assets/images/images4.jpg" class="img-responsive">
-            </div>
-            <div class="news-content">
-              <span class="category">News</span>
-              <div class="post-meta">
-                <span class="author">
-                  <a href="#">
-                    <i class="fa fa-user" aria-hidden="true"></i>
-                    someone famous
-                  </a>
-                </span>
-                <span class="author">
-                  <a href="#">
-                     <i class="fa fa-clock-o" aria-hidden="true"></i>
-                      May 5, 2019
-                  </a>
-                </span>
-                <span class="comments">
-                    <a href="#">
-                      <i class="fa fa-commenting" aria-hidden="true"></i>
-                        83
-                    </a>
-                </span>
-                <div class="clearfix"></div>
-              </div>
-              <h2 class="post-header">
-                Let's go Warriors!
-              </h2>
-              <p>nkvnrefjvsjdvnadfkzjnadzvjbfknaejdznfb</p>
-            </div>
-          </div>
-
-        </div>
-         <div class="col-sm-4">
-          <div class="card">
-                <div class="post-image">
-                  <img src="./assets/images/image1.png" class="img-responsive">
-              </div>
-                <div class="news-content">
-                  <span class="category">Sports</span>
-                  <div class="post-meta">
-                    <span class="author">
-                      <a href="#">
-                        <i class="fa fa-user" aria-hidden="true"></i>
-                        someone famous
-                      </a>
-                    </span>
-                    <span class="author">
-                      <a href="#">
-                        <i class="fa fa-clock-o" aria-hidden="true"></i>
-                          May 5, 2019
-                      </a>
-                    </span>
-                    <span class="comments">
-                        <a href="#">
-                          <i class="fa fa-commenting" aria-hidden="true"></i>
-                            83
-                        </a>
-                    </span>
-                    <div class="clearfix"></div>
-                  </div>
-                  <h2 class="post-header">
-                    Let's go Warriors!
-                  </h2>
-                  <p>nkvnrefjvsjdvnadfkzjnadzvjbfknaejdznfb</p>
-              </div>
-          </div>
-
-        </div>
-        <div class="col-sm-4">
-            <div class="card">
-              <div class="post-image">
-                <img src="./assets/images/image2.jpg" class="img-responsive">
-            </div>
-            <div class="news-content">
-              <span class="category">Discussions</span>
-              <div class="post-meta">
-                <span class="author">
-                  <a href="#">
-                    <i class="fa fa-user" aria-hidden="true"></i>
-                    someone famous
-                  </a>
-                </span>
-                <span class="author">
-                  <a href="#">
-                     <i class="fa fa-clock-o" aria-hidden="true"></i>
-                      May 5, 2019
-                  </a>
-                </span>
-                <span class="comments">
-                    <a href="#">
-                      <i class="fa fa-commenting" aria-hidden="true"></i>
-                        83
-                    </a>
-                </span>
-                <div class="clearfix"></div>
-              </div>
-              <h2 class="post-header">
-                Let's go Warriors!
-              </h2>
-              <p>nkvnrefjvsjdvnadfkzjnadzvjbfknaejdznfb</p>
-            </div>
-          </div>
-
-        </div>
-      </div>
+        <div class="wrapper">
+        <div class="row cardRow1"></div>
+      
+        <div class="row cardRow2"></div>
+        <div class="row cardRow3"></div>
+        <div class="row cardRow4"></div>
+        <div class="row cardRow5"></div>
+        <div class="row cardRow6"></div>
+        <div class="row cardRow7"></div>
+    </div>
+  </div>
+      <br><br><br><br>
+    
     </div>
   </section>
 
-    <!--I usually like to make a container div for each section of my page
-    lets make this like the greeting section or something-->
 
-    <!--start the page with its title in maybe a jumbotron-->
 
-    <!--below that lets make search button with either a menu that is initially hidden
-     This menu will contain the sites we want to run our query through and a checkbox. an extra box that check "all" would be cool-->
 
-    <!--There should be some sort of visual division from this top section like a line-->
 
-    <!--this next section is the actual comparison section and should have a div-->
-
-    <!--initially we should have a greeting message here describing how the site works and how we want users to use it-->
-
-    <!--the cards will be dynamically created and placed here so i dont think we need to do anything more with this section in the html-->
-    <!--another visual divider-->
-
-    <!--This section containes our bootstrap carosel. it should display lets say three different examples of 
-    cool queries we can make. so im thinking we do one slide for each of our interests
-    for instance I would like my slide to show three examples of the query "election" from Fox CNN and NYT
-    The style of these examples shoudl match what the users search results look like-->
-
-    <!--at the bottom of the page I think a ticker would be cool I would like to display the top 5 trending tweets
-    maybe some stock info? idk whatever we feel like. it might not even be necessary-->
-    <!--the final thing we want to do is hide an easter egg in this file somewhere for our snake game-->
-
-    <!-- jquery link -->
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
-    <!-- javascript link -->
-    <!-- <script src="./assets/JS/app.js"></script> -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src= "assets/JS/app.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
@@ -262,3 +192,4 @@
 
 
 </html>
+
