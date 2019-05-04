@@ -22,7 +22,9 @@ input.checkbox {
   max-width: 100%;
   max-height: 100%;
 }
-
+.accordion{
+  background: rgb(73, 51, 51, .5)
+}
 .cards {
   box-shadow: 0 10px 15px rgba(0, 0, 0, 0.5);
 }
