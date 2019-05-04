@@ -1,6 +1,6 @@
 ### Read Me
 
-# NEWSLY
+![Screen Shot 2019-05-04 at 8 24 34 AM](https://user-images.githubusercontent.com/47616126/57181594-b2541180-6e4a-11e9-9183-8663281bf49a.png)
 
 ## Search for news across multiple platforms!
 Our team wanted the user to be able to see how one topic is discussed across multiple platforms. The reason this site is useful is most people get news from one or two places and see a narrow view of the world.
