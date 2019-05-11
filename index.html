@@ -29,7 +29,7 @@
       <div class="title-container text-center mx-auto">
         <h1 class="display-4 text-center">NEWSLY</h1>
         <p class="lead text-center">
-          Exapnd Your View Point
+          Expand Your View Point
         </p>
       </div>
     </div>
@@ -37,312 +37,154 @@
       <div class="row">
         <div class="col-sm-4">
           <h2>About</h2>
-          <p>To expand your viewpoint on a discussed topic</p>
+          <p>Expand your viewpoint by searching for a topic in multiple platforms</p>
           <hr class="hidden-sm hidden-md hidden-lg" />
-          <h3>What's on your mind?</h3>
-          <p>Select the platform you're interested in</p>
-          <hr class="hidden-sm hidden-md hidden-lg" />
+          <h2>What's on your mind?</h2>
+          <p>Type a topic in the search bar and select the sites you want to check.</p>
+          <p>Click the arrow for more sites
+            
+          </p>
            <!-- Navbar -->
               <form class="form-inline my-2 my-lg-0"> 
                 <div class="input-group">
                   <input type="text" class="form-control searchBox" aria-label="Text input with segmented dropdown button">
                   <div class="input-group-append">
-                    <button type="button" class="btn btn-outline-secondary" id="searchButton">Search</button>
-                    <button type="button" class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      <span class="sr-only">Toggle Dropdown</span>
-                    </button>
-                    <div class="dropdown-menu">
-                      <div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                          <div class="input-group-text">
-                            <input type="checkbox" id="cnn" aria-label="Checkbox for following text input">
-                            <!-- added an id here on the button -->
-                          </div>
-                        </div>
-                        <form> <label id="cnn">CNN</label><br> </form>
-                      </div>  
-                      <div class="input-group mb-3 id=">
-                        <div class="input-group-prepend">
-                          <div class="input-group-text">
-                            <input type="checkbox" id="fox-news" aria-label="Checkbox for following text input">
-                            <!-- added an id here on the button -->
-                          </div>
-                        </div>
-                        <form> <label id="fox-news">FOX NEWS</label><br> </form>
-                      </div>      
-                       
-                      <div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                          <div class="input-group-text">
-                            <input type="checkbox" id="bbc-news" aria-label="Checkbox for following text input">
-                            <!-- added an id here on the button -->
-                          </div>
-                        </div>
-                        <form> <label id="bbc-news">BBC NEWS</label><br> </form>
-                      </div>
-                      <div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                          <div class="input-group-text">
-                            <input type="checkbox" id="reddit-r-all" aria-label="Checkbox for following text input">
-                            <!-- added an id here on the button -->
-                          </div>
-                        </div>
-                        <form> <label id="reddit-r-all">Reddit</label><br> </form>
-                      </div>
-                      <div class="input-group mb-3 id=">
-                        <div class="input-group-prepend">
-                          <div class="input-group-text">
-                            <input type="checkbox" id="bleacher-report" aria-label="Checkbox for following text input">
-                            <!-- added an id here on the button -->
-                          </div>
-                        </div>
-                        <form> <label id="bleacher-report">BLEACHER REPORT</label><br> </form>
-                      </div>   
-                      <div class="input-group mb-3 id=">
-                        <div class="input-group-prepend">
-                          <div class="input-group-text">
-                            <input type="checkbox" id="all" aria-label="Checkbox for following text input">
-                            <!-- added an id here on the button -->
-                          </div>
-                        </div>
-                        <form> <label id="all">ALL</label><br> </form>
-                      </div>   
+                    <button type="button" class="btn btn-outline-danger"  data-toggle="popover" data-trigger="hover" data-content="If no site is selected we search for the top result." id="searchButton">Search</button>
+                   
                     
-                    </div>
                   </div>
                 </div>
               </form>
+
+              <!-- Main source options   -->
+              <div class="row">
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="cnn" value="option1">
+                    <label class="form-check-label" for="inlineCheckbox1">CNN</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="bbc-news" value="option2">
+                    <label class="form-check-label" for="inlineCheckbox2">BBC NEWS</label>
+                </div>
+                <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="checkbox" id="fox-news" value="option2">
+                      <label class="form-check-label" for="inlineCheckbox2">FOX NEWS</label>
+                    </div> 
+                <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="checkbox" id="bleacher-report" value="option2">
+                      <label class="form-check-label" for="inlineCheckbox2">BLEACHER REPORT</label>
+                </div>
+                <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="reddit-r-all" value="option2">
+                        <label class="form-check-label" for="inlineCheckbox2">REDDIT</label>
+                </div>  
+                  </div>
+                  <div class="row">
+                    <!-- below is an accordian of additional sites-->
+                    <div class="accordion" id="accordionExample">
+                      <div class="card noBack">
+                        <div class="card-header" id="headingOne">
+                          
+                            <button class="btn btn-link leftText" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                 More sites...
+                                
+                            </button>
+                          
+                        </div>
+                    
+                        <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+                          <div class="card-body">
+                              <div class="input-group mb-3">
+                                  <div class="input-group-prepend">
+                                    <div class="input-group-text noBack">
+                                      <input type="checkbox" id="abc-news" aria-label="Checkbox for following text input">
+                                      <!-- added an id here on the button -->
+                                    </div>
+                                  </div>
+                                  <form> <label id="abc-news">ABC NEWS</label><br> </form>
+                              </div>  
+                              <!-- <div class="input-group mb-3">
+                                  <div class="input-group-prepend">
+                                    <div class="input-group-text">
+                                      <input type="checkbox" id="espn" aria-label="Checkbox for following text input">
+                                      
+                                    </div>
+                                  </div>
+                                  <form> <label id="espn">ESPN</label><br> </form>
+                                </div>       
+                              the espn query was not working. everything looks ok in the query url but it returns the abc object...possibly an issue on the API's side
+                              -->
+                                 
+                                <div class="input-group mb-3">
+                                  <div class="input-group-prepend">
+                                    <div class="input-group-text noBack">
+                                      <input type="checkbox" id="vice-news" aria-label="Checkbox for following text input">
+                                      <!-- added an id here on the button -->
+                                    </div>
+                                  </div>
+                                  <form> <label id="vice-news">VICE NEWS</label><br> </form>
+                                </div>
+                                <div class="input-group mb-3">
+                                  <div class="input-group-prepend">
+                                    <div class="input-group-text noBack">
+                                      <input type="checkbox" id="buzzfeed" aria-label="Checkbox for following text input">
+                                      <!-- added an id here on the button -->
+                                    </div>
+                                  </div>
+                                  <form> <label id="buzzfeed">BUZZ FEED</label><br> </form>
+                                </div>
+                                <div class="input-group mb-3 id=">
+                                  <div class="input-group-prepend">
+                                    <div class="input-group-text noBack">
+                                      <input type="checkbox" id="the-new-york-times" aria-label="Checkbox for following text input">
+                                      <!-- added an id here on the button -->
+                                    </div>
+                                  </div>
+                                  <form> <label id="the-new-york-times">THE NEW YORK TIMES</label><br> </form>
+                                </div>
+                            </div>
+                        </div>
+                      </div>
+                      </div>
+                  </div>
+             <br>  
+             
+             <br>     
+            <h2>Previously Searched</h2>
+            <button type="button" class="btn btn-light" id="lastSearch" aria-placeholder="Search something!"></button>
+            <hr class="hidden-sm hidden-md hidden-lg" />
+            <br>
+            <h2>Sites You Were Interested In</h2>
+            <p id="lastSite"></p>
+            <br><br>
             </div>
           </nav>
-           <!-- accordion -->
-           <!-- <div class="accordion" id="accordionExample">
-            <div class="card">
-              <div class="card-header" id="headingOne">
-                <h2 class="mb-0">
-                  <button
-                    class="btn btn-link"
-                    type="button"
-                    data-toggle="collapse"
-                    data-target="#collapseOne"
-                    aria-expanded="true"
-                    aria-controls="collapseOne"
-                  >
-                    #Trending1
-                    <i class="fa fa-twitter"> </i>
-                  </button>
-                </h2>
-              </div>
-
-              <div
-                id="collapseOne"
-                class="collapse show"
-                aria-labelledby="headingOne"
-                data-parent="#accordionExample"
-              >
-                <div class="card-body">
-                  post
-                </div>
-              </div>
-            </div>
-            <div class="card">
-              <div class="card-header" id="headingTwo">
-                <h2 class="mb-0">
-                  <button
-                    class="btn btn-link collapsed"
-                    type="button"
-                    data-toggle="collapse"
-                    data-target="#collapseTwo"
-                    aria-expanded="false"
-                    aria-controls="collapseTwo"
-                  >
-                    #Trending2
-                    <i class="fa fa-twitter"> </i>
-                  </button>
-                </h2>
-              </div>
-              <div
-                id="collapseTwo"
-                class="collapse"
-                aria-labelledby="headingTwo"
-                data-parent="#accordionExample"
-              >
-                <div class="card-body">
-                  Post
-                </div>
-              </div>
-            </div>
-            <div class="card">
-              <div class="card-header" id="headingThree">
-                <h2 class="mb-0">
-                  <button
-                    class="btn btn-link collapsed"
-                    type="button"
-                    data-toggle="collapse"
-                    data-target="#collapseThree"
-                    aria-expanded="false"
-                    aria-controls="collapseThree"
-                  >
-                    #Trending3
-                    <i class="fa fa-twitter"> </i>
-                  </button>
-                </h2>
-              </div>
-              <div
-                id="collapseThree"
-                class="collapse"
-                aria-labelledby="headingThree"
-                data-parent="#accordionExample"
-              >
-                <div class="card-body">
-                  post
-                </div>
-              </div>
-            </div>
-          </div>
-          <hr class="hidden-sm hidden-md hidden-lg" /> -->
-          <!-- Recently -->
-          <!-- <h3>Recently Searched</h3>
-          <p>....</p>
-          <hr class="hidden-sm hidden-md hidden-lg" />
-          <h3>Quick Links</h3>
-          <ul class="nav nav-pills nav-stacked">
-            <li><a href="https://www.reddit.com/">Reddit</a></li>
-            <li><a href="https://www.cnn.com/">CNN</a></li>
-            <li><a href="https://bleacherreport.com/">Bleacher Report</a></li>
-          </ul>
-          <hr class="hidden-sm hidden-md hidden-lg" />
-        </div>  -->
+         
     <!-- cards -->
     <div class="col-sm-8">
-      <section>
+
     <div class="container-fluid">
+      <div class="row">
+      <h2 id="searchTitle">Trending Headline : USA</h2>
+    </div>
       <div class="container cardContainer">
         <!--added card container class so dynamically created row can go here-->
-
-        <div class="row cardRow1">
-
-          <div class="col-sm-4">
-            <div class="cards">
-              <div class="post-image">
-                  <img src="./assets/images/images4.jpg" class="img-responsive">
-              </div>
-              <div class="news-content">
-                <span class="category">News</span>
-                <div class="post-meta">
-                  <span class="author">
-                    <a href="#">
-                      <i class="fa fa-user" aria-hidden="true"></i>
-                      someone famous
-                    </a>
-                  </span>
-                  <span class="author">
-                    <a href="#">
-                      <i class="fa fa-clock-o" aria-hidden="true"></i>
-                        May 5, 2019
-                    </a>
-                  </span>
-                  <span class="comments">
-                      <a href="#">
-                        <i class="fa fa-commenting" aria-hidden="true"></i>
-                          83
-                      </a>
-                  </span>
-                  <div class="clearfix"></div>
-                </div>
-                <h2 class="post-header">
-                  Let's go Warriors!
-                </h2>
-                <p>nkvnrefjvsjdvnadfkzjnadzvjbfknaejdznfb</p>
-              </div>
-          </div>
-
-        </div>
-         <div class="col-sm-4">
-
-          <div class="cards">
-
-                <div class="post-image">
-                  <img src="./assets/images/image1.png" class="img-responsive">
-              </div>
-                <div class="news-content">
-                  <span class="category">Sports</span>
-                  <div class="post-meta">
-                    <span class="author">
-                      <a href="#">
-                        <i class="fa fa-user" aria-hidden="true"></i>
-                        someone famous
-                      </a>
-                    </span>
-                    <span class="author">
-                      <a href="#">
-                        <i class="fa fa-clock-o" aria-hidden="true"></i>
-                          May 5, 2019
-                      </a>
-                    </span>
-                    <span class="comments">
-                        <a href="#">
-                          <i class="fa fa-commenting" aria-hidden="true"></i>
-                            83
-                        </a>
-                    </span>
-                    <div class="clearfix"></div>
-                  </div>
-                  <h2 class="post-header">
-                    Let's go Warriors!
-                  </h2>
-                  <p>nkvnrefjvsjdvnadfkzjnadzvjbfknaejdznfb</p>
-              </div>
-          </div>
-
-        </div>
-        <div class="col-sm-4">
-            <div class="cards">
-              <div class="post-image">
-                <img src="./assets/images/image2.jpg" class="img-responsive">
-            </div>
-            <div class="news-content">
-              <span class="category">Discussions</span>
-              <div class="post-meta">
-                <span class="author">
-                  <a href="#">
-                    <i class="fa fa-user" aria-hidden="true"></i>
-                    someone famous
-                  </a>
-                </span>
-                <span class="author">
-                  <a href="#">
-                     <i class="fa fa-clock-o" aria-hidden="true"></i>
-                      May 5, 2019
-                  </a>
-                </span>
-                <span class="comments">
-                    <a href="#">
-                      <i class="fa fa-commenting" aria-hidden="true"></i>
-                        83
-                    </a>
-                </span>
-                <div class="clearfix"></div>
-              </div>
-              <h2 class="post-header">
-                Let's go Warriors!
-              </h2>
-              <p>nkvnrefjvsjdvnadfkzjnadzvjbfknaejdznfb</p>
-            </div>
-          </div>
-
-        </div>
-      </div>
-      <div class="row cardRow2"></div>
-      <div class="row cardRow3"></div>
-      <div class="row cardRow4"></div>
-      <div class="row cardRow5"></div>
-      <div class="row cardRow6"></div>
-      <div class="row cardRow7"></div>
-    </div>
+        <div class="wrapper">
+        <div class="row cardRow1"></div>
       
+        <div class="row cardRow2"></div>
+        <div class="row cardRow3"></div>
+        <div class="row cardRow4"></div>
+        <div class="row cardRow5"></div>
+        <div class="row cardRow6"></div>
+        <div class="row cardRow7"></div>
+    </div>
+  </div>
+      <br><br><br><br>
+    
     </div>
   </section>
-  
+
 
     <!--I usually like to make a container div for each section of my page
     lets make this like the greeting section or something-->
@@ -370,11 +212,33 @@
     maybe some stock info? idk whatever we feel like. it might not even be necessary-->
     <!--the final thing we want to do is hide an easter egg in this file somewhere for our snake game-->
 
-    <!-- jquery link -->
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
-    <!-- javascript link -->
-    <!-- <script src="./assets/JS/app.js"></script> -->
+    <!--cool source id's to add
+    
+    abc-news
+    bbc-sport
+    buzzfeed
+    espn
+    financial-post
+    google-news
+    new-scientist
+    politico
+    polygon
+    techcrunch
+    the-new-york-times
+    vice-news
+  
+
+  -->
+  <!-- <br>
+  <br>  
+  <div class="row">
+    <div class="col-12">
+      <p>2019 &copy;Anadelaine Catala, Renata Oliveira, Alexander Sigala</p>
+    </div>
+  </div> -->
+  
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+   
     <script src= "assets/JS/app.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
@@ -382,4 +246,3 @@
 
 
 </html>
-

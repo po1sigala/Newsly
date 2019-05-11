@@ -1,3 +1,164 @@
-/* I think the only must have would be a media query for small screens
- small screens should maybe only display one card in the results section instead of two or thre
- whagt color should our links be and should they turn colors on \hover or after clicks*/
+html {
+    position: relative;
+    min-height: 100%;
+   }
+  /* I think the only must have would be a media query for small screens
+   small screens should maybe only display one card in the results section instead of two or thre
+   what color should our links be and should they turn colors on \hover or after clicks*/
+  @import url("https://fonts.googleapis.com/css?family=Roboto+Condensed");
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: "Roboto Condensed", sans-serif !important;
+    background: rgb(196, 194, 194)!important;
+  }
+  input.checkbox {
+      width: 40px; 
+      height: 40px; 
+      color: blue;
+  }
+  
+  .imgFit{
+    max-width: 100%;
+    max-height: 100%;
+  }
+  
+  .cards {
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.5);
+  }
+  
+  .cards:hover .news-content {
+   bottom: 0px;
+  }
+  .cards .category {
+    top: -30px;
+    left: 0;
+    height: 30px;
+    background: #00b8f4;
+    text-align: center;
+    color: #fff;
+    text-transform: uppercase;
+    padding: 5px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    transition: 0.5s;
+  }
+  .siteLink{
+    background: #00b8f4;
+  }
+  .cards .news-content.post-meta a {
+    text-decoration: none;
+    padding-right: 10px;
+  
+    font-weight: bold;
+    transition: 0.5s;
+  }
+  .cards .news-content.post-meta a:hover {
+    color: #df084a;
+  }
+  .cards .news-content.post-header {
+    margin: 0;
+    padding: 10px 0;
+    color: #007da6;
+    height: 75px;
+    background: #ccc;
+    font-size: 28px;
+    overflow: hidden;
+  }
+  .cards .news-content p {
+      font-size: 16px;
+      margin: 8px 0 0;
+      padding: 8;
+      color: black;
+      transition: .5s;
+      opacity: 0'
+  }
+  .cards:hover .news-content p {
+      opacity: 1;
+  }
+  h1 {
+    font-family: 'Abril Fatface';
+    font-weight: 100;
+  }
+  .lead text-center {
+    font-family: 'Abril Fatface';
+  }
+  .input-group {
+    margin-left: 15px;
+    margin-bottom: 15px;
+    margin-top: 15px;
+  }
+  .input-group-text {
+    position: relative;
+      display: block;
+      margin: 5px;
+    cursor: pointer;
+    padding: 1px;
+    width: 40px;
+    height: 40px;
+  }
+  label {
+    margin-left: 10px;
+    font-weight: bold;
+    position: relative;
+      display: block;
+      margin: 0;
+      border-top: 1px solid #eee;
+    cursor: pointer;
+  }
+  h2 {
+    font-family: 'Abril Fatface';
+    font-weight: 100;
+    border-bottom: black 4px solid;
+    text-align: center;
+  }
+  .dropdown-menu.show {
+    display: block;
+    border: gray solid 1px;
+  }
+  .jumbotron {
+    background-image: url("../images/images5.png");
+    box-shadow: 5 10px 15px rgba(0, 0, 0, 0.5);
+   }
+   
+   .title-container {
+    background-color: white;
+    border: 3px solid darkgray;
+    border-radius: 60px;
+    opacity: .8;
+    width: 60%;
+    box-shadow: 5 10px 15px rgba(248, 248, 248, 0.5);
+   
+   }
+   .footer {
+    background-color: white;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 100px;
+    width: 100%;
+    overflow: hidden;
+    margin: 100rem 0 -2rem 0;
+   }
+  p{
+    text-align: center;
+  }
+  .btn-light{
+    background: none;
+    border-color: rgba(255, 255, 255, 0);
+  }
+  .accordion{
+    background:none;
+  }
+  .noBack{
+    background: none;
+  }
+  @media only screen and (min-width:300px) and (max-width:767px) {
+    .media {
+      flex-wrap:wrap;
+    }
+  }
+  /* organize the css by components */
+  
+  
+  
