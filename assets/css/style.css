@@ -34,7 +34,7 @@ html {
     top: -30px;
     left: 0;
     height: 30px;
-    background: #00b8f4;
+    background: #17a2b8;
     text-align: center;
     color: #fff;
     text-transform: uppercase;
@@ -44,7 +44,7 @@ html {
     transition: 0.5s;
   }
   .siteLink{
-    background: #00b8f4;
+    background: #17a2b8;
   }
   .cards .news-content.post-meta a {
     text-decoration: none;
@@ -152,12 +152,27 @@ html {
   }
   .noBack{
     background: none;
+    border: none;
+  }
+  .shaded{
+   background:  rgba(0,0,0,.03);
+  }
+  label{
+      border-top: none;
+      border-bottom: 1px solid #eee;
+  }
+  .btn-link{
+      color: #17a2b8;
+  }
+  input[type=checkbox] {
+    transform: scale(2);
   }
   @media only screen and (min-width:300px) and (max-width:767px) {
     .media {
       flex-wrap:wrap;
     }
   }
+
   /* organize the css by components */
   
   

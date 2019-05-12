@@ -32,6 +32,7 @@ $(document).ready(function() {
   //make pressing the enter key do the same thing as hitting submit
   $(document).on("keypress",function(enter){
     if(enter.which==13){
+      //first prevent the defulat function of refreshing the page
       event.preventDefault();
       clearPassAndStore();
     }
@@ -48,6 +49,10 @@ $(document).ready(function() {
     $("#lastSite").empty();
     localStorage.clear("siteLink");
     var siteLink = $(this).val();
+    if (siteLink=== null){
+      siteLink="Trending";
+      console.log(siteLink);
+    }
     localStorage.setItem("siteLink", siteLink);
     var linktosite = $("<a>")
       .text($(this).attr("id"))
@@ -75,8 +80,8 @@ $(document).ready(function() {
 
     emptyRows(); //clear out the example cards
     var search = $(".searchBox").val(); //deaclare a search variable set to the text of the search box
-  
-    $("#searchTitle").text("Articles relating to " + search);
+    //update page headline to reflect what user searched
+    $("#searchTitle").text("Top Headline(s):" + search);
     console.log("the search was" + search);
     // get all boxes our user checked and put them into and array
     var checkedBoxes = $("input:checked")

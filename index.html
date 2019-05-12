@@ -33,31 +33,35 @@
         </p>
       </div>
     </div>
-    <div class="container">
+
+
+<div class="container">
+  <div class="row"> 
+    <div class="col-sm-4">
       <div class="row">
-        <div class="col-sm-4">
+        <div class="col-md-12">
           <h2>About</h2>
           <p>Expand your viewpoint by searching for a topic in multiple platforms</p>
           <hr class="hidden-sm hidden-md hidden-lg" />
           <h2>What's on your mind?</h2>
           <p>Type a topic in the search bar and select the sites you want to check.</p>
-          <p>Click the arrow for more sites
-            
-          </p>
+         
            <!-- Navbar -->
-              <form class="form-inline my-2 my-lg-0"> 
+          <form class="form-inline my-2 my-lg-0"> 
                 <div class="input-group">
                   <input type="text" class="form-control searchBox" aria-label="Text input with segmented dropdown button">
                   <div class="input-group-append">
-                    <button type="button" class="btn btn-outline-danger"  data-toggle="popover" data-trigger="hover" data-content="If no site is selected we search for the top result." id="searchButton">Search</button>
-                   
-                    
+                    <button type="button" class="btn btn-outline-info"  data-toggle="popover" data-trigger="hover" data-content="If no site is selected we search for the top result." id="searchButton">Search
+                    </button>
                   </div>
                 </div>
-              </form>
+          </form>
+        </div>
+      </div>
 
               <!-- Main source options   -->
-              <div class="row">
+    <div class="row shaded">
+      <div class="col-md-12">
                 <div class="form-check form-check-inline">
                     <input class="form-check-input" type="checkbox" id="cnn" value="option1">
                     <label class="form-check-label" for="inlineCheckbox1">CNN</label>
@@ -78,12 +82,14 @@
                         <input class="form-check-input" type="checkbox" id="reddit-r-all" value="option2">
                         <label class="form-check-label" for="inlineCheckbox2">REDDIT</label>
                 </div>  
-                  </div>
-                  <div class="row">
+       </div>
+      </div>
+    <div class="row shaded">
+      <div class="col-md-12">
                     <!-- below is an accordian of additional sites-->
                     <div class="accordion" id="accordionExample">
                       <div class="card noBack">
-                        <div class="card-header" id="headingOne">
+                        <div class="card-header noBack" id="headingOne">
                           
                             <button class="btn btn-link leftText" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                                  More sites...
@@ -146,6 +152,7 @@
                         </div>
                       </div>
                       </div>
+                    </div>
                   </div>
              <br>  
              
@@ -157,11 +164,10 @@
             <h2>Sites You Were Interested In</h2>
             <p id="lastSite"></p>
             <br><br>
-            </div>
-          </nav>
+    </div>
          
     <!-- cards -->
-    <div class="col-sm-8">
+    <div class="col-sm-8" id="arictleSection">
 
     <div class="container-fluid">
       <div class="row">
@@ -170,19 +176,21 @@
       <div class="container cardContainer">
         <!--added card container class so dynamically created row can go here-->
         <div class="wrapper">
-        <div class="row cardRow1"></div>
-      
-        <div class="row cardRow2"></div>
-        <div class="row cardRow3"></div>
-        <div class="row cardRow4"></div>
-        <div class="row cardRow5"></div>
-        <div class="row cardRow6"></div>
-        <div class="row cardRow7"></div>
+          <div class="row cardRow1"></div>
+        
+          <div class="row cardRow2"></div>
+          <div class="row cardRow3"></div>
+          <div class="row cardRow4"></div>
+          <div class="row cardRow5"></div>
+          <div class="row cardRow6"></div>
+          <div class="row cardRow7"></div>
+        </div>
+      </div>
+      <br><br><br><br>
+    </div>
     </div>
   </div>
-      <br><br><br><br>
-    
-    </div>
+</div>
   </section>
 
 
