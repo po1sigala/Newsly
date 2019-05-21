@@ -1,15 +1,7 @@
-//documentready the thing
 
-//below are our global variables
-//storing the sources we want to search for
-// var search = ""; //user search will be a "this.val" object i can call once the html is set up for the search bar
-
-//trying to dynamically create custom col breaks so if its on card col-md-12
-
-// var numColumns= 12;
-// if (numOfCards=1)
 
 $(document).ready(function() {
+  //----------------------------------------ON LOAD----------------------------------------------------------------------------------------
   //below we enable our popover 
   $(function () {
     $('[data-toggle="popover"]').popover()
@@ -23,6 +15,8 @@ $(document).ready(function() {
   searchSites("us", "headline");
   // on ready we want any last searched terms to be displayed from local storage
   $("#lastSearch").text(localStorage.getItem("lastSearch"));
+  
+  //-----------------------------------------EVENT HANDLING---------------------------------------------------------------------------------------
 
   //query our news api for our users search when they click search
   $("#searchButton").on("click", function() {
@@ -49,10 +43,7 @@ $(document).ready(function() {
     $("#lastSite").empty();
     localStorage.clear("siteLink");
     var siteLink = $(this).val();
-    if (siteLink=== null){
-      siteLink="Trending";
-      console.log(siteLink);
-    }
+   
     localStorage.setItem("siteLink", siteLink);
     var linktosite = $("<a>")
       .text($(this).attr("id"))
@@ -60,10 +51,12 @@ $(document).ready(function() {
       .attr("target", "_blank");
     $("#lastSite").append(linktosite);
   });
-//below we have logic which governs our popovers. It should dismiss any popover on the users next click
+//below we have logic which governs our popovers. 
   $('.popover-dismiss').popover({
     trigger: 'focus'
   })
+
+  //-----------------------------------------------FUNCTIONS---------------------------------------------------------------------------------
 
   function emptyRows(){
     $(".cardRow1").empty()
@@ -137,6 +130,10 @@ $(document).ready(function() {
     }
 
     console.log(newsQueryURL); //debug to make sure the url is coming out ok
+
+
+      //----------------------------------------------------DYNAMICALLY CREATED ELEMENTS----------------------------------------------------------------------------
+
     $.ajax({
       url: newsQueryURL,
       method: "GET"
@@ -192,23 +189,14 @@ $(document).ready(function() {
       $(".cardRow" + rowNum).append(responsiveDiv);
       //append the card into the card section of the html
 
-      //create our news content div divs in it and append that to the card div
-      /* inside our carDiv I need news content div
-                      inside news content I need span category, div post-meta, h2 post-header, and a p tag
-              */
-
-      /*
-          make an img tag with link to image from the article
-          put it in a div with class "post-image"
-          put that in a  div with class "card"
-          put that in a div with class "col-sm-4"
-          append everythign to class cardRow
-          */
+     
     });
   }
 
-  // below is where my twitter request is happening it should run when the page refreshes and get the trending tweets globally
+
 });
+  //--------------------------------------------------UNUSED/SCRAPPED CODE------------------------------------------------------------------------------
+
 
 //below is tester code im not sure if i want
 // numOfCards++ this was under the response function
@@ -265,3 +253,13 @@ $("clickboxid").on("click",function(){
       selectedSites.push(this.attr("id"))//if its notin the array add it
   }
 })*/
+//documentready the thing
+
+//below are our global variables
+//storing the sources we want to search for
+// var search = ""; //user search will be a "this.val" object i can call once the html is set up for the search bar
+
+//trying to dynamically create custom col breaks so if its on card col-md-12
+
+// var numColumns= 12;
+// if (numOfCards=1)
